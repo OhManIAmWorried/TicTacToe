@@ -6,12 +6,7 @@ import java.awt.event.ActionListener;
 
 public class XOButton extends JButton implements ActionListener{
     ImageIcon X,O;
-    byte val = 0;
-    /*
-    0: nothing
-    1: x
-    2: o
-    */
+    private static boolean val = false;
 
     public XOButton(){
         X = new ImageIcon(this.getClass().getResource("X.png"));
@@ -19,13 +14,23 @@ public class XOButton extends JButton implements ActionListener{
         this.addActionListener(this);
     }
 
+    public void setVal(boolean v){
+        this.val = v;
+    }
+
     public void actionPerformed(ActionEvent e){
-        val++;
-        val%=3;
-        switch(val){
-            case 0: { setIcon(null); break;}
-            case 1: { setIcon(X); break;}
-            case 2: { setIcon(O); break;}
-        }
+        if (val) putO(); else putX();
+    }
+
+    public void putX(){
+        setIcon(X);
+    }
+
+    public void putO(){
+        setIcon(O);
+    }
+
+    public void putBlank(){
+        setIcon(null);
     }
 }
