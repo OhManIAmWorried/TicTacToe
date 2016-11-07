@@ -6,14 +6,9 @@ import java.awt.*;
 public class GameField extends JFrame{
 
     private JPanel mainpanel = new JPanel();                         //Игровая панель на которую установленны кнопки
-<<<<<<< SymbolMethods
-    private XOButton button[][] = new XOButton[3][3];                //матрица кнопок
-
-=======
     private JPanel menupanel = new JPanel();
     private XOButton button[][] = new XOButton[3][3];                //матрица кнопок
 /*
->>>>>>> local
     public static void main(String[] args){
         new GameField();                                             //создаём окно
     }
@@ -24,7 +19,6 @@ public class GameField extends JFrame{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);     //устанавливаем операции по выходу //TODO: Всплывающее сообщение "Вы уверенны?"
         mainpanel.setLayout(new GridLayout(3,3));                    //устанавливаем разметку сеткой на рабочую поверхность
 
-<<<<<<< SymbolMethods
         for (int i = 0; i < 3; i++)                                  //добавляем кнопки на рабочую поверхность
             for (int j = 0; j < 3; j++) {
                 button[i][j] = new XOButton();                       //TODO: Выбор своих и чужих символов для отображения
@@ -33,8 +27,7 @@ public class GameField extends JFrame{
 
         setAlwaysOnTop(true);                                        //режим поверх всех окон
         setResizable(false);                                         //режим статического размера
-        add(mainpanel);                                              //добавляем рабочую поверхность на окно
-=======
+
         JButton b1 = new JButton("P v P");
         JButton b2 = new JButton("P v C");
         JButton b3 = new JButton("C v C");
@@ -47,16 +40,9 @@ public class GameField extends JFrame{
         menupanel.add(b5,BorderLayout.NORTH);
         add(menupanel,BorderLayout.NORTH);
 
-        for (int i = 0; i < 3; i++)                                  //добавляем кнопки на рабочую поверхность
-            for (int j = 0; j < 3; j++) {
-                button[i][j] = new XOButton();                       //TODO: Выбор своих и чужих символов для отображения
-                mainpanel.add(button[i][j]);
-            }
-   
         setAlwaysOnTop(true);                                        //режим поверх всех окон      
         setResizable(false);                                         //режим статического размера
         add(mainpanel,BorderLayout.CENTER);                                            //добавляем рабочую поверхность на окно
->>>>>>> local
         setVisible(true);                                            //режим видимости окна
     }
 }
