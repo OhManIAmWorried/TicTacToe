@@ -1,6 +1,7 @@
 package Graphics;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,9 +10,10 @@ public class XOButton extends JButton implements ActionListener{
     private static boolean val = false;
 
     public XOButton(){
-        X = new ImageIcon(this.getClass().getResource("X.png"));
-        O = new ImageIcon(this.getClass().getResource("O.png"));
+        X = new ImageIcon(this.getClass().getResource("x.png"));
+        O = new ImageIcon(this.getClass().getResource("o.png"));
         this.addActionListener(this);
+        this.setBackground(new Color(241,232,198));
     }
 
     public void setVal(boolean v){
@@ -19,7 +21,7 @@ public class XOButton extends JButton implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        if (val) putO(); else putX();
+        if (val) putO(); else putO();
     }
 
     public void putX(){
