@@ -15,7 +15,6 @@ public class Menu extends JFrame{
 
     private XOButton[][] cells;
 
-
     public static void main(String[] args){
         new Menu();
     }
