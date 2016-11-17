@@ -58,12 +58,13 @@ public class Menu extends JFrame{
         pvcb = new JButton();
         cvcb = new JButton();
 
-        //TODO: toPlay calls from actionListeners
-
         pvpb.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 addField(n);
+                Player player1 = new Human();
+                Player player2 = new Human();
+                new toPlay(player1,player2,n);
             }
         });
 
@@ -71,6 +72,9 @@ public class Menu extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addField(n);
+                Player player1 = new Human();
+                Player player2 = new PC();
+                new toPlay(player1,player2,n);
             }
         });
 
@@ -78,6 +82,9 @@ public class Menu extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addField(n);
+                Player player1 = new Human();
+                Player player2 = new PC();
+                new toPlay(player1,player2,n);
             }
         });
     }

@@ -5,10 +5,10 @@ package Logic;
 
 abstract class Field{
     static int n;                     // number of elements per side / число элементов на сторону
-    static boolean element[][];       //TODO: find out what this matrix is intended to do / что она делает?
+    static boolean element[][];       // matrix of states player1 or player2, I believe. / матрица состояний, игрок1 или игрок 2, полагаю
     static boolean occupancy[][];     // matrix of occupation flags / матрица заполненности клеток
 
-    Field(int n){this.n = n;}
+    Field(int n){this.n = n; element = new boolean[n][n]; occupancy = new boolean[n][n];}
 
     static boolean getOccupancy(int y, int x){return occupancy[y][x];}
 

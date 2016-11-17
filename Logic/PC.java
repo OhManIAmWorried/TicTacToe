@@ -4,12 +4,14 @@ package Logic;
  * Created by Alex on 14.11.2016.
  */
 
+import Graphics.Menu;
+
 import static Logic.toPlay.getTurn;
 
-public class comp implements Player {
+public class PC implements Player {
     String name;
 
-    comp(){name="";}
+    public PC(){name="";}
 
     public void setName(){
         String[] names = {"Mary", "John", "Arty", "A. Hitler", "Neco", "Lady X.", "Superman", "I. Newton", "Tugaryn-Snake", "Casanova Snake", "Avatar"};
@@ -125,6 +127,8 @@ public class comp implements Player {
         } else
         {
             posYX = putSomewhere();
+            Menu.getCell(posYX[0],posYX[1]).doClick();
+            Menu.disableField();
         }
         //TODO;
     }
