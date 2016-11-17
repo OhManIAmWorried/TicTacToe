@@ -7,31 +7,45 @@ abstract class Field{
     static int n;                     // number of elements per side / число элементов на сторону
     static boolean element[][];       //TODO: find out what this matrix is intended to do / что она делает?
     static boolean occupancy[][];     // matrix of occupation flags / матрица заполненности клеток
+
     Field(int n){this.n = n;}
-    static boolean getOccupancy(int pos1, int pos2){return occupancy[pos1][pos2];}
-    static boolean getElement(int pos1, int pos2){return element[pos1][pos2];}
-    static boolean setElement(int a, int b, boolean val)
+
+    static boolean getOccupancy(int y, int x){return occupancy[y][x];}
+
+    static boolean getElement(int y, int x){return element[y][x];}
+
+    static void setElement(int y, int x, boolean val)
     {
-        element[a][b] = val;
-        occupancy[a][b] = true;
-        return true;
+        element[y][x] = val;
+        occupancy[y][x] = true;
     }
+
     static boolean isFull(){
-        boolean b = true;
-        for(int i = 0; i < n; i++)
-            for(int j = 0; j < n; j++)
-                if (!occupancy[i][j])
-                    b = false;
-        return b;
+        boolean res = true;
+        for(int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                if (!occupancy[i][j]){
+                    res = false;
+                    break;
+                }
+            if (!res) break;
+        }
+        return res;
     }
+
     static boolean isEmpty(){
-        boolean b = true;
-        for(int i = 0; i < n; i++)
+        boolean res = true;
+        for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++)
-                if (occupancy[i][j])
-                    b = false;
-        return b;
+                if (occupancy[i][j]) {
+                    res = false;
+                    break;
+                }
+            if (res) break;
+        }
+        return res;
     }
+
     abstract boolean isWin(boolean value);
 }
 
@@ -45,6 +59,7 @@ class Field3x3 extends Field{
     @Override
     public boolean isWin(boolean value){
         boolean result = false;
+
         for (int i=0; i<3; i++){
             if (occupancy[i][0] && occupancy[i][1] && occupancy[i][2])
                 if (element[i][0] == value && element[i][1] == value && element[i][2] == value){

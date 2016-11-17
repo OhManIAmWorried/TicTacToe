@@ -4,24 +4,28 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Logic.*;
+
+import static Logic.toPlay.getTurn;
+import static Logic.toPlay.toMove;
 
 public class XOButton extends JButton implements ActionListener{
     ImageIcon X,O;
-    private static boolean val = false;
+    int indexi,indexj;
 
-    public XOButton(){
+    public XOButton(int i,int j){
+        indexi = i;
+        indexj = j;
         X = new ImageIcon(this.getClass().getResource("x.png"));
         O = new ImageIcon(this.getClass().getResource("o.png"));
         this.addActionListener(this);
         this.setBackground(new Color(241,232,198));
     }
 
-    public void setVal(boolean v){
-        this.val = v;
-    }
-
     public void actionPerformed(ActionEvent e){
-        if (val) putO(); else putO();
+        if (toPlay.getTurn()) putO(); else putX();
+        toPlay.setElement(indexi, indexj);
+        toPlay.nextTurn();
     }
 
     public void putX(){

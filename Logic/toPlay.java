@@ -5,49 +5,51 @@ import Logic.*;
 
 public class toPlay
 {
-    Field field;          //объект, содержащий в себе логику поля (матрица occupancy, матрица val, isEmpty, isFull, isWin)
-    public boolean turn2; //флаг на валидность того что ходит второй игрок (sic.)
-    player player1;
-    player player2;
+    private static boolean turn;  //флаг на валидность того что ходит первый игрок
 
-    public toPlay(player pl1, player pl2) {
-        field = new Field();
-        player1 = pl1;
-        player2 = pl2;
-    }
+    public static boolean getTurn(){return turn;}
 
-    public void newGame(){
-        for(int i=0; i<3; i++)
-            for(int j=0; j<3; j++)
-                field.occupancy[i][j] = false;
-    }
+    private static Field field;    //объект, содержащий в себе логику поля (матрица occupancy, матрица val, isEmpty, isFull, isWin)
+    private static Player player1;
+    private static Player player2;
+    private static int n;  //кол-во шагов возможных в игре, в конструктор передаётся размерность стороны: 3,5,7
+    private static int k;  //текущее кол-во итераций игры
 
-
-    public void toMove(int[] pos){
-        if (!turn2)
-            player1.toMove(pos);
-        else
-            player2.toMove(pos);
-        turn2 = !turn2;
-    }
-
-    public boolean EndOfGame(){ //Переделать в месседжи
-        boolean result=false;
-
-        if (field.isWin(turn2)){
-            if(turn2)
-                System.out.println(player1.getName()+" wins!");
-            else
-                System.out.println(player2.getName()+" wins!");
-            result = true;
+    public toPlay(Player p1, Player p2, int sideN){
+        //TODO: этот метод должен быть вызван из Graphics.menu при нажатии на игру, должен вызывать метод меню по смене кнопок
+        n = sideN * sideN;  // 3 * 3 = 9 итераций шага
+        k = 0;
+        player1 = p2;
+        player2 = p2;
+        switch (sideN){
+            case 3: {field = new Field3x3(); break;}
+            default: {throw new IllegalArgumentException("Invalid cells number");}
         }
-        else
-        if (field.isFull()){
-            System.out.println("No one wins!");
-            result = true;
-        }
-
-        return result;
+        turn = false; //меняем при первой-же итерации в nextTurn, ходит первый игрок
+        nextTurn();
     }
 
+    //TODO: метод для блокировки заполненных ячеек
+
+    public static void nextTurn(){                        //сюда ссылается ячейка поля при нажатии и меню для первого хода
+        if (field.isWin(turn)) endOfGame(true);
+        else if (field.isFull()) endOfGame(false);
+        else {turn = !turn; toMove();}
+    }
+
+    public static void toMove(){                          //сюда ссылается nextTurn
+        k = k + 1;
+        if (turn) player1.toMove();
+        else player2.toMove();
+    }
+
+    public static void setElement(int i, int j){field.setElement(i,j,!turn);}
+
+    public static void endOfGame(boolean win){ //TODO: Переделать в месседжи + дать команду в меню убрать поле, вернуть кнопки
+        if (win)
+            if (turn) System.out.println(player1.getName() + " wins!");
+            else System.out.println(player2.getName() + " wins!");
+        else
+            System.out.println("tie");
+    }
 }
