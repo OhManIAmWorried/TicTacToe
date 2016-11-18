@@ -19,6 +19,7 @@ public class Human implements Player {
     }
 
     public void toMove(){  //Рвзблокирует поле для человека
+        System.out.println("Human is here");
         Menu.enableField();
     }
 

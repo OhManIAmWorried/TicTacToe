@@ -24,7 +24,7 @@ public class PC implements Player {
 
     private int[] putSomewhere(){
         int pos[] ={2, 2};
-
+                                                        //Won't work for > 3x3, needs massive changes
         int priority[][]={{6,4,6},{4,8,4},{6,4,6}};
 
         for(int i=0; i<3;i++)
@@ -114,11 +114,11 @@ public class PC implements Player {
     }
 
     public void toMove(){
-
         int[] posYX = new int[2];
         posYX[0] = -1;
         posYX[1] = -1;
-
+        //Menu.enableField();
+        System.out.println("PC is here");
         if (Field.isEmpty()) {
             int[][] pos = {{0,0}, {0,2}, {2,0}, {2,2}, {1,1}};
             int n = (int) Math.round(Math.random()*4);
@@ -127,10 +127,16 @@ public class PC implements Player {
         } else
         {
             posYX = putSomewhere();
-            Menu.getCell(posYX[0],posYX[1]).doClick();
-            Menu.disableField();
         }
-        //TODO;
+        System.out.println("I am about to place the symbol");
+        Menu.enableField();
+        try {
+            Thread.sleep(500);
+         } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Menu.setCell(posYX[0],posYX[1]);
+        //TODO: FIND OUT WHY COMPUTER IS GOING FIRST
     }
 
 }

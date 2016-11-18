@@ -31,7 +31,7 @@ public class Menu extends JFrame{
         setVisible(true);
     }
 
-    public static XOButton getCell(int i, int j){return cells[i][j];}
+    public static void setCell(int i, int j){System.out. println("cell set"); cells[i][j].doClick();}
 
     private void addField(int n){
         pvpb.setVisible(false);
@@ -47,6 +47,8 @@ public class Menu extends JFrame{
                 cells[i][j] = new XOButton(i,j);
                 bpanel.add(cells[i][j]);
             }
+        bpanel.revalidate();
+        bpanel.repaint();
     }
 
     private void createUIComponents() {
@@ -82,7 +84,8 @@ public class Menu extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 addField(n);
-                Player player1 = new Human();
+                System.out.println("Added");
+                Player player1 = new PC();
                 Player player2 = new PC();
                 new toPlay(player1,player2,n);
             }
@@ -92,13 +95,12 @@ public class Menu extends JFrame{
     public static void disableField(){
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
-                cells[i][j].setEnabled(false);
+                cells[i][j].setDisabled();
     }
 
     public static void enableField(){
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
-                cells[i][j].setEnabled(true);
-        //TODO: вызывать дизактивацию заполненных ячеек в toPlay
+                cells[i][j].setEnabled();
     }
 }
