@@ -32,6 +32,8 @@ public class XOButton extends JButton implements ActionListener{
             else putX();
             occupied = true;
             toPlay.setElement(indexi, indexj);
+            revalidate();
+            repaint();
             toPlay.nextTurn();
         }
     }

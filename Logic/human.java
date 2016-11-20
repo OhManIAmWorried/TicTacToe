@@ -8,18 +8,16 @@ import Graphics.*;
 public class Human implements Player {
     String name;
 
-    public Human(){name="default";}
+    public Human(){ name="default"; }
 
-    public void setName(){  //TODO: Принимать имя из какого-нибудь окна
-
-    }
+    public void setName(){}  //TODO: Принимать имя из какого-нибудь окна
 
     public String getName(){
         return name;
     }
 
     public void toMove(){  //Рвзблокирует поле для человека
-        System.out.println("Human is here");
+        System.out.println(name + " is here");
         Menu.enableField();
     }
 

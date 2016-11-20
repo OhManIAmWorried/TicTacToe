@@ -29,10 +29,9 @@ public class toPlay
         nextTurn();
     }
 
-    //TODO: метод для блокировки заполненных ячеек
-
     public static void nextTurn(){                        //сюда ссылается ячейка поля при нажатии и меню для первого хода
         Menu.disableField();
+        Menu.getMenu().repaint();
         if (field.isWin(turn)) endOfGame(true);
         else if (field.isFull()) endOfGame(false);
         else {turn = !turn; toMove();}

@@ -11,7 +11,7 @@ import static Logic.toPlay.getTurn;
 public class PC implements Player {
     String name;
 
-    public PC(){name="";}
+    public PC(){setName();}
 
     public void setName(){
         String[] names = {"Mary", "John", "Arty", "A. Hitler", "Neco", "Lady X.", "Superman", "I. Newton", "Tugaryn-Snake", "Casanova Snake", "Avatar"};
@@ -24,76 +24,41 @@ public class PC implements Player {
 
     private int[] putSomewhere(){
         int pos[] ={2, 2};
-                                                        //Won't work for > 3x3, needs massive changes
+                                                        //TODO: Won't work for > 3x3, needs massive changes, also pretty weak
         int priority[][]={{6,4,6},{4,8,4},{6,4,6}};
 
         for(int i=0; i<3;i++)
-            for(int j=0; j<3; j++)
-            {
-
-                for(int m=0; m<3; m++)
-                {
-                    if (Field.getElement(m, j) != getTurn() && Field.getOccupancy(m, j))
-                        priority[i][j]++;
-                    if (Field.getElement(m, j) == getTurn() && Field.getOccupancy(m, j))
-                        priority[i][j]--;
+            for(int j=0; j<3; j++) {
+                for(int m=0; m<3; m++) {
+                    if (Field.getElement(m, j) != getTurn() && Field.getOccupancy(m, j)) priority[i][j]++;
+                    if (Field.getElement(m, j) == getTurn() && Field.getOccupancy(m, j)) priority[i][j]--;
                 }
 
-                for(int m=0; m<3; m++)
-                {
-                    if (Field.getElement(i, m) != getTurn() && Field.getOccupancy(i, m))
-                        priority[i][j]++;
-                    if (Field.getElement(i, m) == getTurn() && Field.getOccupancy(i, m))
-                        priority[i][j]--;
+                for(int m=0; m<3; m++) {
+                    if (Field.getElement(i, m) != getTurn() && Field.getOccupancy(i, m)) priority[i][j]++;
+                    if (Field.getElement(i, m) == getTurn() && Field.getOccupancy(i, m)) priority[i][j]--;
                 }
-
-
             }
-        if (Field.getOccupancy(1, 1) && Field.getElement(1, 1) != getTurn())
-        {
-            priority[0][0]++; priority[0][2]++; priority[2][0]++; priority[2][2]++;
-        } else
-        if (Field.getOccupancy(1, 1) && Field.getElement(1, 1) == getTurn())
-        {
-            priority[0][0]--; priority[0][2]--; priority[2][0]--; priority[2][2]--;
-        }
 
-        if(Field.getOccupancy(2, 2) && Field.getElement(2, 2) != getTurn())
-        {
-            priority[0][0]++; priority[1][1]++;
+        if (Field.getOccupancy(1, 1) && Field.getElement(1, 1) != getTurn()) {priority[0][0]++; priority[0][2]++; priority[2][0]++; priority[2][2]++;
         } else
-        if(Field.getOccupancy(2, 2) && Field.getElement(2, 2) == getTurn())
-        {
-            priority[0][0]--; priority[1][1]--;
-        }
+        if (Field.getOccupancy(1, 1) && Field.getElement(1, 1) == getTurn()) {priority[0][0]--; priority[0][2]--; priority[2][0]--; priority[2][2]--;}
 
-        if(Field.getOccupancy(2, 0) && Field.getElement(2, 0) != getTurn())
-        {
-            priority[0][2]++; priority[1][1]++;
+        if(Field.getOccupancy(2, 2) && Field.getElement(2, 2) != getTurn()) {priority[0][0]++; priority[1][1]++;
         } else
-        if(Field.getOccupancy(2, 0) && Field.getElement(2, 0) == getTurn())
-        {
-            priority[0][2]--; priority[1][1]--;
-        }
+        if(Field.getOccupancy(2, 2) && Field.getElement(2, 2) == getTurn()) {priority[0][0]--; priority[1][1]--;}
 
-        if(Field.getOccupancy(0, 0) && Field.getElement(0, 0) != getTurn())
-        {
-            priority[2][2]++; priority[1][1]++;
+        if(Field.getOccupancy(2, 0) && Field.getElement(2, 0) != getTurn()) {priority[0][2]++; priority[1][1]++;
         } else
-        if(Field.getOccupancy(0, 0) && Field.getElement(0, 0) == getTurn())
-        {
-            priority[2][2]--; priority[1][1]--;
-        }
+        if(Field.getOccupancy(2, 0) && Field.getElement(2, 0) == getTurn()) {priority[0][2]--; priority[1][1]--;}
 
-        if(Field.getOccupancy(0, 2) && Field.getElement(0, 2) != getTurn())
-        {
-            priority[2][0]++; priority[1][1]++;
+        if(Field.getOccupancy(0, 0) && Field.getElement(0, 0) != getTurn()) {priority[2][2]++; priority[1][1]++;
         } else
-        if(Field.getOccupancy(0, 2) && Field.getElement(0, 2) == getTurn())
-        {
-            priority[2][0]--; priority[2][1]--;
-        }
+        if(Field.getOccupancy(0, 0) && Field.getElement(0, 0) == getTurn()) {priority[2][2]--; priority[1][1]--;}
 
+        if(Field.getOccupancy(0, 2) && Field.getElement(0, 2) != getTurn()) {priority[2][0]++; priority[1][1]++;
+        } else
+        if(Field.getOccupancy(0, 2) && Field.getElement(0, 2) == getTurn()) {priority[2][0]--; priority[2][1]--;}
 
         for(int i=0; i<3;i++)
             for(int j=0; j<3; j++)
@@ -109,7 +74,6 @@ public class PC implements Player {
                     max = priority[i][j];
                 }
 
-
         return pos;
     }
 
@@ -118,7 +82,7 @@ public class PC implements Player {
         posYX[0] = -1;
         posYX[1] = -1;
         //Menu.enableField();
-        System.out.println("PC is here");
+        System.out.println(name + " is here");
         if (Field.isEmpty()) {
             int[][] pos = {{0,0}, {0,2}, {2,0}, {2,2}, {1,1}};
             int n = (int) Math.round(Math.random()*4);
@@ -132,11 +96,10 @@ public class PC implements Player {
         Menu.enableField();
         try {
             Thread.sleep(500);
-         } catch (InterruptedException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
         Menu.setCell(posYX[0],posYX[1]);
-        //TODO: FIND OUT WHY COMPUTER IS GOING FIRST
     }
 
 }

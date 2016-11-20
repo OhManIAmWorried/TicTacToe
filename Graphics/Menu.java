@@ -17,9 +17,10 @@ public class Menu extends JFrame{
 
     private static XOButton[][] cells;
 
-    public static void main(String[] args){
-        new Menu();
-    }
+    private static Menu amenu;
+
+    public static void main(String[] args){amenu = new Menu();}
+
     Menu(){
         super("Tic Tac Toe v0.0");
         n = 3;                                      //TODO: button for changing the value of n
@@ -31,15 +32,20 @@ public class Menu extends JFrame{
         setVisible(true);
     }
 
-    public static void setCell(int i, int j){System.out. println("cell set"); cells[i][j].doClick();}
+    public static Menu getMenu(){return amenu;}
+
+    public static void setCell(int i, int j){System.out.println("cell set"); cells[i][j].doClick();}
 
     private void addField(int n){
+        bpanel.setVisible(false);
         pvpb.setVisible(false);
         pvcb.setVisible(false);
         cvcb.setVisible(false);
         bpanel.remove(pvpb);
         bpanel.remove(pvcb);
         bpanel.remove(cvcb);
+        bpanel.validate();
+        bpanel.repaint();
         bpanel.setLayout(new GridLayout(n,n));
         cells = new XOButton[n][n];
         for (int i = 0; i < n; i++)
@@ -47,9 +53,10 @@ public class Menu extends JFrame{
                 cells[i][j] = new XOButton(i,j);
                 bpanel.add(cells[i][j]);
             }
-        bpanel.revalidate();
+        bpanel.validate();
         bpanel.repaint();
-    }
+        bpanel.setVisible(true);
+    }                                          //TODO: fix the overdrawing
 
     private void createUIComponents() {
 

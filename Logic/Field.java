@@ -60,26 +60,26 @@ class Field3x3 extends Field{
     public boolean isWin(boolean value){
         boolean result = false;
 
-        for (int i=0; i<3; i++){
+        for (int i=0; i<3; i++){                                                                    //in width
             if (occupancy[i][0] && occupancy[i][1] && occupancy[i][2])
                 if (element[i][0] == value && element[i][1] == value && element[i][2] == value){
                     result = true;
                     break;
                 }
 
-            if (occupancy[0][i] && occupancy[1][i] && occupancy[2][i])
+            if (occupancy[0][i] && occupancy[1][i] && occupancy[2][i])                              //in height
                 if (element[0][i] == value && element[1][i] == value && element[2][i] == value){
                     result = true;
                     break;
                 }
         }
 
-        if (occupancy[0][0] && occupancy[1][1] && occupancy[2][2])
+        if (occupancy[0][0] && occupancy[1][1] && occupancy[2][2])                                  //main diagonal
             if (element[0][0] == value && element[1][1] == value && element[2][2] == value)
                 result = true;
 
-        if (occupancy[0][2] && occupancy[1][1] && occupancy[2][0])
-            if (element[0][2] && element[1][1] && element[2][0])
+        if (occupancy[0][2] && occupancy[1][1] && occupancy[2][0])                                  //semi diagonal
+            if (element[0][2] == value && element[1][1] == value && element[2][0] == value)
                 result = true;
 
         return result;
