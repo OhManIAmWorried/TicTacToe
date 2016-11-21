@@ -5,6 +5,6 @@ package Logic;
  */
 public interface Player {
     public String getName();
-    public void setName();
+    public void setName(String name);
     public void toMove();
 }

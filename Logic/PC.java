@@ -11,11 +11,10 @@ import static Logic.toPlay.getTurn;
 public class PC implements Player {
     String name;
 
-    public PC(){setName();}
+    public PC(){setName("N");}
 
-    public void setName(){
-        String[] names = {"Mary", "John", "Arty", "A. Hitler", "Neco", "Lady X.", "Superman", "I. Newton", "Tugaryn-Snake", "Casanova Snake", "Avatar"};
-        name = names[(int) Math.round(Math.random()*10)];
+    public void setName(String n){
+        name = n;
     }
 
     public String getName(){
