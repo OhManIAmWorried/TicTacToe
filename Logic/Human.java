@@ -25,9 +25,9 @@ public class Human  extends JFrame implements Player {
         System.out.println(name + " is here");
         Menu.enableField();
     }
-
 }
 
+/*
 class wind extends JFrame {
     public wind(){
         JFrame fr1 = new JFrame();
@@ -41,3 +41,4 @@ class wind extends JFrame {
         fr1.add(p);
     }
 }
+*/

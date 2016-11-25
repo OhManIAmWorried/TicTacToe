@@ -16,7 +16,7 @@ public class toPlay
     private static int k;  //текущее кол-во итераций игры
 
     public toPlay(Player p1, Player p2, int sideN){
-        //TODO: этот метод должен быть вызван из Graphics.menu при нажатии на игру, должен вызывать метод меню по смене кнопок
+        Menu.getMenu().clShow("3");
         n = sideN * sideN;  // 3 * 3 = 9 итераций шага
         k = 0;
         player1 = p1;
@@ -52,4 +52,5 @@ public class toPlay
         else
             System.out.println("tie");
     }
+
 }
