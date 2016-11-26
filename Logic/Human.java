@@ -23,7 +23,7 @@ public class Human  extends JFrame implements Player {
 
     public void toMove(){  //Рвзблокирует поле для человека
         System.out.println(name + " is here");
-        Menu.enableField();
+        Menu.getMenu().enableField();
     }
 }
 

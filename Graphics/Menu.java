@@ -1,5 +1,6 @@
 package Graphics;
 
+import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -13,12 +14,12 @@ import Graphics.Panels.NamePanel;
 import Logic.*;
 
 public class Menu extends JFrame{
-    private JPanel mainpanel;           //main panel                   //Главная, наерное, панель JFrame
-    private JPanel widepanel;           //content panel                //"Широкая" панель бежевого (Default) цвета для красоты
-    private JPanel contentpanel;        //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
-    private static JPanel mmenupanel;          //main menu panel              //Панель с тремя кнопками (Оффлайн, онлайн, чат)
-    private static JPanel fieldpanel;          //gamefield panel              //Панель с игровым полем
-    private static JPanel namepanel;           //pre-offline game panel       //Панель с выбором типа игры и имён игроков для оффлайн режима
+    private JPanel mainpanel;             //main panel                   //Главная, наерное, панель JFrame
+    private JPanel widepanel;             //content panel                //"Широкая" панель бежевого (Default) цвета для красоты
+    private JPanel contentpanel;          //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
+    private static MMenuPanel mmenupanel; //main menu panel              //Панель с тремя кнопками (Оффлайн, онлайн, чат)
+    private static FieldPanel fieldpanel; //gamefield panel              //Панель с игровым полем
+    private static NamePanel namepanel;   //pre-offline game panel       //Панель с выбором типа игры и имён игроков для оффлайн режима
     private static CardLayout cl;
 
     private static int n;               //elements per edge            //Кол-во элементов на сторону
@@ -51,9 +52,9 @@ public class Menu extends JFrame{
         namepanel = new NamePanel();
         cl = new CardLayout();
         contentpanel.setLayout(cl);
-        cl.addLayoutComponent(mmenupanel,"1");
-        cl.addLayoutComponent(fieldpanel,"2");
-        cl.addLayoutComponent(namepanel,"3");
+        contentpanel.add(mmenupanel,"1");
+        contentpanel.add(fieldpanel,"2");
+        contentpanel.add(namepanel,"3");
     }
 
     private void Defaults(){
@@ -83,8 +84,8 @@ public class Menu extends JFrame{
 
     private void createUIComponents() {}
 
-    public static void disableField(){FieldPanel.setOff();}
-    public static void enableField(){FieldPanel.setOn();}
-    public static void setCell(int i, int j){FieldPanel.setCell(i,j);}
+    public void disableField(){fieldpanel.setOff();}
+    public void enableField(){fieldpanel.setOn(); System.out.println("Enabeling (Menu)");}
+    public void setCell(int i, int j){fieldpanel.setCell(i,j);}
 }
 

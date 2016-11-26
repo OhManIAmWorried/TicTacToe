@@ -32,6 +32,9 @@ public class NamePanel extends JPanel{
 
     public NamePanel(){
 
+        player1 = new Human();
+        player2 = new Human();
+
         group1 = new ButtonGroup();
         rbtn11 = new JRadioButton("Computer", false);
         rbtn12 = new JRadioButton("Human", true);
@@ -68,7 +71,8 @@ public class NamePanel extends JPanel{
         rbtn11.addActionListener( new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Menu.setPlayer1(new PC());
+                player1 = new PC();
+                Menu.setPlayer1(player1);
                 String n = Menu.setName();
                 player1.setName(n);
                 tf1.setText(player1.getName());
@@ -79,6 +83,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player1 = new Human();
+                Menu.setPlayer1(player1);
                 player1.setName("Mr. Nobody");
                 tf1.setText("Mr. Nobody");
             }
@@ -88,6 +93,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player2 = new PC();
+                Menu.setPlayer2(player2);
                 String n = Menu.setName();
                 player2.setName(n);
                 tf2.setText(player2.getName());
@@ -98,6 +104,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player2 = new Human();
+                Menu.setPlayer2(player2);
                 player2.setName("Ms. Nobody");
                 tf2.setText("Ms. Nobody");
             }
@@ -112,7 +119,5 @@ public class NamePanel extends JPanel{
                 new toPlay(player1, player2, n);
             }
         });
-
     }
-
 }

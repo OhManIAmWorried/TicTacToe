@@ -16,7 +16,7 @@ public class toPlay
     private static int k;  //текущее кол-во итераций игры
 
     public toPlay(Player p1, Player p2, int sideN){
-        Menu.getMenu().clShow("3");
+        Menu.getMenu().clShow("2");
         n = sideN * sideN;  // 3 * 3 = 9 итераций шага
         k = 0;
         player1 = p1;
@@ -30,7 +30,7 @@ public class toPlay
     }
 
     public static void nextTurn(){                        //сюда ссылается ячейка поля при нажатии и меню для первого хода
-        Menu.disableField();
+        Menu.getMenu().disableField();
         Menu.getMenu().repaint();
         if (field.isWin(turn)) endOfGame(true);
         else if (field.isFull()) endOfGame(false);
@@ -52,5 +52,4 @@ public class toPlay
         else
             System.out.println("tie");
     }
-
 }

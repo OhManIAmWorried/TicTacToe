@@ -26,6 +26,8 @@ public class XOButton extends JButton implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
+        if (occupied) System.out.println("Error: occupied");
+        if (!enabled) System.out.println("Disabled");
         if ((enabled) && !(occupied)) {
             System.out.println("Action performed");
             if (toPlay.getTurn()) putO();
@@ -39,7 +41,7 @@ public class XOButton extends JButton implements ActionListener{
     }
 
     public void setDisabled(){enabled = false;}
-    public void setEnabled(){enabled = true;}
+    public void setEnabled(){enabled = true; System.out.println("Enabled");}
 
     public void putX(){
         setIcon(X);

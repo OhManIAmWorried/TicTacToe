@@ -92,13 +92,13 @@ public class PC implements Player {
             posYX = putSomewhere();
         }
         System.out.println("I am about to place the symbol");
-        Menu.enableField();
+        Menu.getMenu().enableField();
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Menu.setCell(posYX[0],posYX[1]);
+        Menu.getMenu().setCell(posYX[0],posYX[1]);
     }
 
 }

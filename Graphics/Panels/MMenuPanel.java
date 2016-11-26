@@ -26,6 +26,10 @@ public class MMenuPanel extends JPanel{
         onlbtn.setBackground(cs.BUTTON_BG);
         chtbtn.setForeground(cs.BUTTON_FG);
         chtbtn.setBackground(cs.BUTTON_BG);
+        onlbtn.setVisible(true);
+        offbtn.setVisible(true);
+        chtbtn.setVisible(true);
+        repaint();
     }
 
     public MMenuPanel(){
@@ -40,12 +44,10 @@ public class MMenuPanel extends JPanel{
         add(onlbtn);
         add(chtbtn);
 
-        System.out.println("Check");
-
         offbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Menu.getMenu().clShow("2");
+                Menu.getMenu().clShow("3");
             }
         });
     }

@@ -8,15 +8,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FieldPanel extends JPanel {
-    private static XOButton[][] cells;
+    private XOButton[][] cells;
     private static ColorScheme cs;
     private static int n;
 
-    public static void main(String[] args) {
-        update();
-    }
-
-    public static void update() {
+    public void update() {
         cs = Menu.cs;
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
@@ -26,26 +22,31 @@ public class FieldPanel extends JPanel {
     public FieldPanel(int n) {
         cells = new XOButton[n][n];
         setLayout(new GridLayout(n,n));
+        this.n = n;
 
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
                 cells[i][j] = new XOButton(i, j);
                 add(cells[i][j]);
             }
+
         update();
     }
 
-    public static void setOff() {
+    public void setOff() {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 cells[i][j].setDisabled();
     }
 
-    public static void setOn() {
+    public void setOn() {
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
+            for (int j = 0; j < n; j++) {
+                System.out.println("Enabeling (Field)");
                 cells[i][j].setEnabled();
+                cells[i][j].revalidate();
+            }
     }
 
-    public static void setCell(int i, int j){cells[i][j].doClick();}
+    public void setCell(int i, int j){cells[i][j].doClick(); System.out.println("Clicked");}
 }
