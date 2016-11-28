@@ -1,4 +1,4 @@
-package Graphics.ColorScheme;
+package Graphics.CS;
 
 import java.awt.*;
 
