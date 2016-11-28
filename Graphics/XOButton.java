@@ -19,9 +19,9 @@ public class XOButton extends JButton implements ActionListener{
     public XOButton(int i,int j){
         indexi = i;
         indexj = j;
-        //setBackground(Menu.getMenu().);
-        setContentAreaFilled(false);
-        setOpaque(false);
+        setBackground(Menu.getMenu().getCs().FIELDCELL_BG);
+        //setContentAreaFilled(false);
+        //setOpaque(false);                 //Transparency
         X = new ImageIcon(this.getClass().getResource("x.png"));
         O = new ImageIcon(this.getClass().getResource("o.png"));
         this.addActionListener(this);

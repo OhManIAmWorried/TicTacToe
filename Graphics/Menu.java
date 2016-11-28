@@ -45,6 +45,7 @@ public class Menu extends JFrame{
         fieldpanel = new FieldPanel(n/*,this*/);
         namepanel = new NamePanel(/*this*/);
         cl = new CardLayout();
+        contentpanel.setBackground(cs.CONTPANEL_BG);
         contentpanel.setLayout(cl);
         contentpanel.add(mmenupanel,"1");
         contentpanel.add(fieldpanel,"2");

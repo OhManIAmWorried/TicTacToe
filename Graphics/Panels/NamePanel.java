@@ -1,5 +1,6 @@
 package Graphics.Panels;
 
+import Graphics.CS.ColorScheme;
 import Logic.Human;
 import Logic.PC;
 import Logic.Player;
@@ -54,7 +55,32 @@ public class NamePanel extends JPanel{
         readybtn = new JButton("Ready");
 
         panel = new JPanel();
+
+        ColorScheme cs = Menu.getMenu().getCs();
+
+        lbl1.setBackground(cs.TEXTFIELD_BG);
+        panel.setBackground(cs.CONTPANEL_BG);
+        rbtn11.setBackground(cs.RADIOBUTTON_BG);
+        rbtn12.setBackground(cs.RADIOBUTTON_BG);
+        rbtn21.setBackground(cs.RADIOBUTTON_BG);
+        rbtn22.setBackground(cs.RADIOBUTTON_BG);
+        rbtn11.setForeground(cs.RADIOBUTTON_FG);
+        rbtn12.setForeground(cs.RADIOBUTTON_FG);
+        rbtn21.setForeground(cs.RADIOBUTTON_FG);
+        rbtn22.setForeground(cs.RADIOBUTTON_FG);
+        tf1.setBackground(cs.TEXTFIELD_BG);
+        tf2.setBackground(cs.TEXTFIELD_BG);
+        tf1.setForeground(cs.TEXTFIELD_FG);
+        tf2.setForeground(cs.TEXTFIELD_FG);
+        tf1.setCaretColor(cs.TEXTFIELD_CARET);
+        tf2.setCaretColor(cs.TEXTFIELD_CARET);
+        readybtn.setBackground(cs.BUTTON_BG);
+        readybtn.setForeground(cs.BUTTON_FG);
+        lbl1.setForeground(cs.LABEL_FG);
+        lbl2.setForeground(cs.LABEL_FG);
+
         panel.setLayout(new GridLayout(4,2));
+
         panel.add(lbl1);
         panel.add(lbl2);
         panel.add(rbtn11);
