@@ -1,13 +1,9 @@
 package Graphics;
 
-import javax.print.attribute.standard.MediaSize;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import Graphics.ColorScheme.*;
+import Graphics.CS.*;
 import Graphics.Panels.FieldPanel;
 import Graphics.Panels.MMenuPanel;
 import Graphics.Panels.NamePanel;
@@ -23,33 +19,31 @@ public class Menu extends JFrame{
     private static CardLayout cl;
 
     private static int n;               //elements per edge            //Кол-во элементов на сторону
-    public static ColorScheme cs;       //color scheme                 //Цветовая схема, доступна из Logic и Graphics, что берут её из Graphics.Menu.cs
+    private static ColorScheme cs;       //color scheme                 //Цветовая схема, доступна из Logic и Graphics, что берут её из Graphics.Menu.cs
 
     private static Player player1;
     private static Player player2;
 
+    private static Menu amenu;
 
     public static void setPlayer1(Player that) {player1 = that;}
 
     public static void setPlayer2(Player that) {player2 = that;}
 
-    public static void setColorScheme(ColorScheme that){
-        cs = that;
-    }
+    public void setColorScheme(ColorScheme that) {cs = that;}
+    public static ColorScheme getCs() {return cs;}
 
     public static String setName(){
         String[] names = {"Mary", "John", "Arty", "A. Hitler", "Neco", "Lady X.", "Superman", "I. Newton", "Tugaryn-Snake", "Casanova Snake", "Avatar"};
         return names[(int) Math.round(Math.random()*10)];
     }
 
-    private static Menu amenu;
-
     public static void main(String[] args){amenu = new Menu();}
 
     public void addPanels(){
-        mmenupanel = new MMenuPanel();
-        fieldpanel = new FieldPanel(n);
-        namepanel = new NamePanel();
+        mmenupanel = new MMenuPanel(/*this*/);
+        fieldpanel = new FieldPanel(n/*,this*/);
+        namepanel = new NamePanel(/*this*/);
         cl = new CardLayout();
         contentpanel.setLayout(cl);
         contentpanel.add(mmenupanel,"1");
@@ -59,7 +53,7 @@ public class Menu extends JFrame{
 
     private void Defaults(){
         n = 3;              //клеток на сторону
-        cs = new CS_Milk();   //цветовая схема
+        this.cs = new CS_Milk();   //цветовая схема
 
         add(mainpanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

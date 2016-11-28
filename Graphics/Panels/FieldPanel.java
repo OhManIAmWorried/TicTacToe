@@ -1,6 +1,6 @@
 package Graphics.Panels;
 
-import Graphics.ColorScheme.*;
+import Graphics.CS.*;
 import Graphics.XOButton;
 import Graphics.Menu;
 
@@ -12,25 +12,24 @@ public class FieldPanel extends JPanel {
     private static ColorScheme cs;
     private static int n;
 
-    public void update() {
-        cs = Menu.cs;
+    public void reUpdate() {
+        cs = Menu.getMenu().getCs();
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 cells[i][j].setBackground(cs.BUTTON_BG);
+        setBackground(cs.CONTPANEL_BG);
     }
 
     public FieldPanel(int n) {
         cells = new XOButton[n][n];
         setLayout(new GridLayout(n,n));
         this.n = n;
-
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
                 cells[i][j] = new XOButton(i, j);
                 add(cells[i][j]);
             }
-
-        update();
+        reUpdate();
     }
 
     public void setOff() {

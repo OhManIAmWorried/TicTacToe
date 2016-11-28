@@ -1,6 +1,6 @@
 package Graphics.Panels;
 
-import Graphics.ColorScheme.ColorScheme;
+import Graphics.CS.ColorScheme;
 import Graphics.Menu;
 
 import javax.swing.*;
@@ -15,10 +15,10 @@ public class MMenuPanel extends JPanel{
     private static JButton offbtn; //Offline button
     private static JButton onlbtn; //Online button
     private static JButton chtbtn; //Chat button
-    private static ColorScheme cs;
+    private ColorScheme cs;
 
-    public void update(){
-        cs = Menu.cs;
+    public void reUpdate(){
+        cs = Menu.getCs();
         setBackground(cs.CONTPANEL_BG);
         offbtn.setForeground(cs.BUTTON_FG);
         offbtn.setBackground(cs.BUTTON_BG);
@@ -39,7 +39,7 @@ public class MMenuPanel extends JPanel{
         offbtn = new JButton("Offline mode");
         onlbtn = new JButton("Online mode");
         chtbtn = new JButton("Chat");
-        update();
+        reUpdate();
         add(offbtn);
         add(onlbtn);
         add(chtbtn);

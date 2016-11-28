@@ -1,6 +1,7 @@
 package Graphics;
 
 import javax.swing.*;
+import javax.swing.plaf.ButtonUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,15 +19,17 @@ public class XOButton extends JButton implements ActionListener{
     public XOButton(int i,int j){
         indexi = i;
         indexj = j;
+        //setBackground(Menu.getMenu().);
+        setContentAreaFilled(false);
+        setOpaque(false);
         X = new ImageIcon(this.getClass().getResource("x.png"));
         O = new ImageIcon(this.getClass().getResource("o.png"));
         this.addActionListener(this);
-        this.setBackground(new Color(241,232,198));
         occupied = false;
     }
 
     public void actionPerformed(ActionEvent e){
-        if (occupied) System.out.println("Error: occupied");
+        if (occupied) System.out.println("Occupied");
         if (!enabled) System.out.println("Disabled");
         if ((enabled) && !(occupied)) {
             System.out.println("Action performed");
