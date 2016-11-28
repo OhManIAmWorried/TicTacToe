@@ -13,6 +13,7 @@ public class Menu extends JFrame{
     private JPanel mainpanel;             //main panel                   //Главная, наерное, панель JFrame
     private JPanel widepanel;             //content panel                //"Широкая" панель бежевого (Default) цвета для красоты
     private JPanel contentpanel;          //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
+    private JPanel backpanel;             //main background panel        //главная большая панель фона, на ней widepanel
     private static MMenuPanel mmenupanel; //main menu panel              //Панель с тремя кнопками (Оффлайн, онлайн, чат)
     private static FieldPanel fieldpanel; //gamefield panel              //Панель с игровым полем
     private static NamePanel namepanel;   //pre-offline game panel       //Панель с выбором типа игры и имён игроков для оффлайн режима
@@ -53,8 +54,11 @@ public class Menu extends JFrame{
     }
 
     private void Defaults(){
-        n = 3;              //клеток на сторону
+        n = 3;                     //клеток на сторону
         this.cs = new CS_Milk();   //цветовая схема
+
+        backpanel.setBackground(cs.BACKPANEL_BG);
+        widepanel.setBackground(cs.WIDEPANEL_BG);
 
         add(mainpanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -80,7 +84,7 @@ public class Menu extends JFrame{
     private void createUIComponents() {}
 
     public void disableField(){fieldpanel.setOff();}
-    public void enableField(){fieldpanel.setOn(); System.out.println("Enabeling (Menu)");}
+    public void enableField(){fieldpanel.setOn(); System.out.println("Enabling (Menu)");}
     public void setCell(int i, int j){fieldpanel.setCell(i,j);}
 }
 

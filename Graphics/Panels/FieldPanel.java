@@ -5,6 +5,7 @@ import Graphics.XOButton;
 import Graphics.Menu;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import java.awt.*;
 
 public class FieldPanel extends JPanel {
@@ -15,9 +16,10 @@ public class FieldPanel extends JPanel {
     public void reUpdate() {
         cs = Menu.getMenu().getCs();
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
-                cells[i][j].setBackground(cs.BUTTON_BG);
-        setBackground(cs.CONTPANEL_BG);
+            for (int j = 0; j < n; j++){
+                cells[i][j].setBackground(cs.FIELDCELL_BG);
+                cells[i][j].setBorder(new MatteBorder(1, 1, 1, 1, Menu.getMenu().getCs().FIELDCELL_BORDER));
+            }
     }
 
     public FieldPanel(int n) {

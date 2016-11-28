@@ -19,17 +19,24 @@ public class MMenuPanel extends JPanel{
 
     public void reUpdate(){
         cs = Menu.getCs();
+
         setBackground(cs.CONTPANEL_BG);
-        offbtn.setForeground(cs.BUTTON_FG);
-        offbtn.setBackground(cs.BUTTON_BG);
-        onlbtn.setForeground(cs.BUTTON_FG);
-        onlbtn.setBackground(cs.BUTTON_BG);
-        chtbtn.setForeground(cs.BUTTON_FG);
-        chtbtn.setBackground(cs.BUTTON_BG);
+
+        offbtn.setForeground(cs.BUTTON_PRIMARY_FG);
+        offbtn.setBackground(cs.BUTTON_PRIMARY_BG);
+        onlbtn.setForeground(cs.BUTTON_PRIMARY_FG);
+        onlbtn.setBackground(cs.BUTTON_PRIMARY_BG);
+        chtbtn.setForeground(cs.BUTTON_PRIMARY_FG);
+        chtbtn.setBackground(cs.BUTTON_PRIMARY_BG);
+
+        offbtn.setFont(new Font("Alien Encounters", Font.PLAIN, 16));
+        onlbtn.setFont(new Font("Alien Encounters", Font.PLAIN, 16));
+        chtbtn.setFont(new Font("Alien Encounters", Font.PLAIN, 16));
+
+
         onlbtn.setVisible(true);
         offbtn.setVisible(true);
         chtbtn.setVisible(true);
-        repaint();
     }
 
     public MMenuPanel(){

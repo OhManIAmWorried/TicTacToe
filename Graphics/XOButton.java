@@ -1,6 +1,7 @@
 package Graphics;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import javax.swing.plaf.ButtonUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,6 +21,7 @@ public class XOButton extends JButton implements ActionListener{
         indexi = i;
         indexj = j;
         setBackground(Menu.getMenu().getCs().FIELDCELL_BG);
+        setBorder(new MatteBorder(1, 1, 1, 1, Menu.getMenu().getCs().FIELDCELL_BORDER));
         //setContentAreaFilled(false);
         //setOpaque(false);                 //Transparency
         X = new ImageIcon(this.getClass().getResource("x.png"));

@@ -7,7 +7,9 @@ import Logic.Player;
 import Logic.toPlay;
 import Graphics.Menu;
 
+import javax.swing.border.*;
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -78,6 +80,11 @@ public class NamePanel extends JPanel{
         readybtn.setForeground(cs.BUTTON_FG);
         lbl1.setForeground(cs.LABEL_FG);
         lbl2.setForeground(cs.LABEL_FG);
+
+        setBorder(new MatteBorder(5, 5, 5, 5, cs.CONTPANEL_BG));
+        readybtn.setBorder(new MatteBorder(10,0,5,0, cs.CONTPANEL_BG));
+
+        readybtn.setFont(new Font("Alien Encounters", Font.PLAIN, 19));
 
         panel.setLayout(new GridLayout(4,2));
 
