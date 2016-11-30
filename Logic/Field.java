@@ -54,10 +54,12 @@ abstract class Field{
 
 class Field3x3 extends Field{
 
-    Field3x3(){super(3);}
+    Field3x3() {
+        super(3);
+    }
 
     @Override
-    public boolean isWin(boolean value){
+    public boolean isWin(boolean value) {
         boolean result = false;
 
         for (int i=0; i<3; i++){                                                                    //in width

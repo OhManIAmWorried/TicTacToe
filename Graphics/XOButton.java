@@ -63,5 +63,6 @@ public class XOButton extends JButton implements ActionListener{
 
     public void putBlank(){
         setIcon(null);
+        occupied = false;
     }
 }

@@ -22,7 +22,11 @@ public class toPlay
         player1 = p1;
         player2 = p2;
         switch (sideN){
-            case 3: {field = new Field3x3(); break;}
+            case 3: {
+                field = new Field3x3();
+                Menu.getMenu().clearField();
+                break;
+            }
             default: {throw new IllegalArgumentException("Invalid cells number");}
         }
         turn = false; //меняем при первой-же итерации в nextTurn, ходит первый игрок
@@ -44,11 +48,14 @@ public class toPlay
 
     public static void setElement(int i, int j){field.setElement(i,j,turn);}
 
-    public static void endOfGame(boolean win){ //TODO: Переделать в месседжи + дать команду в меню убрать поле, вернуть кнопки
+    public static void endOfGame(boolean win){
+        Menu.getMenu().clShow("4");
         if (win)
-            if (turn) System.out.println(player1.getName() + " wins!");
-            else System.out.println(player2.getName() + " wins!");
+            if (turn) {
+                Menu.showWin(true,true,player1.getName());
+            }
+            else Menu.showWin(true,true,player2.getName());
         else
-            System.out.println("tie");
+            Menu.showWin(true,false,"");
     }
 }

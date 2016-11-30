@@ -49,5 +49,6 @@ public class FieldPanel extends JPanel {
             }
     }
 
+    public void clearCell(int i, int j){cells[i][j].putBlank();System.out.println("Cleared");}
     public void setCell(int i, int j){cells[i][j].doClick(); System.out.println("Clicked");}
 }

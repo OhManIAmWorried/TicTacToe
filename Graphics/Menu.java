@@ -4,19 +4,24 @@ import javax.swing.*;
 import java.awt.*;
 
 import Graphics.CS.*;
+import Graphics.Panels.OffResPanel;
 import Graphics.Panels.FieldPanel;
 import Graphics.Panels.MMenuPanel;
 import Graphics.Panels.NamePanel;
 import Logic.*;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+
 public class Menu extends JFrame{
-    private JPanel mainpanel;             //main panel                   //Главная, наерное, панель JFrame
-    private JPanel widepanel;             //content panel                //"Широкая" панель бежевого (Default) цвета для красоты
-    private JPanel contentpanel;          //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
-    private JPanel backpanel;             //main background panel        //главная большая панель фона, на ней widepanel
-    private static MMenuPanel mmenupanel; //main menu panel              //Панель с тремя кнопками (Оффлайн, онлайн, чат)
-    private static FieldPanel fieldpanel; //gamefield panel              //Панель с игровым полем
-    private static NamePanel namepanel;   //pre-offline game panel       //Панель с выбором типа игры и имён игроков для оффлайн режима
+    private JPanel mainpanel;              //main panel                   //Главная, наерное, панель JFrame
+    private JPanel widepanel;              //content panel                //"Широкая" панель бежевого (Default) цвета для красоты
+    private JPanel contentpanel;           //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
+    private JPanel backpanel;              //main background panel        //главная большая панель фона, на ней widepanel
+
+    private static MMenuPanel mmenupanel;   //main menu panel         "1"  //Панель с тремя кнопками (Оффлайн, онлайн, чат)
+    private static FieldPanel fieldpanel;   //gamefield panel         "3"  //Панель с игровым полем
+    private static NamePanel namepanel;     //pre-offline game panel  "2"  //Панель с выбором типа игры и имён игроков для оффлайн режима
+    private static OffResPanel offrespanel; //post-offline game panel "4"  //Панель результатов для оффлайн игры
     private static CardLayout cl;
 
     private static int n;               //elements per edge            //Кол-во элементов на сторону
@@ -42,15 +47,21 @@ public class Menu extends JFrame{
     public static void main(String[] args){amenu = new Menu();}
 
     public void addPanels(){
-        mmenupanel = new MMenuPanel(/*this*/);
-        fieldpanel = new FieldPanel(n/*,this*/);
-        namepanel = new NamePanel(/*this*/);
+
+        mmenupanel = new MMenuPanel();
+        fieldpanel = new FieldPanel(n);
+        namepanel = new NamePanel();
+        offrespanel = new OffResPanel();
+
         cl = new CardLayout();
+
         contentpanel.setBackground(cs.CONTPANEL_BG);
         contentpanel.setLayout(cl);
+
         contentpanel.add(mmenupanel,"1");
         contentpanel.add(fieldpanel,"2");
         contentpanel.add(namepanel,"3");
+        contentpanel.add(offrespanel,"4");
     }
 
     private void Defaults(){
@@ -82,6 +93,23 @@ public class Menu extends JFrame{
     public static Menu getMenu(){return amenu;}
 
     private void createUIComponents() {}
+
+    public static void showWin(Boolean offline, Boolean win, String name){
+        if (offline) {
+            if (win) offrespanel.showWin(name);
+            else offrespanel.showTie();
+        }
+        else {
+            //TODO: win for online mode
+        }
+    }
+
+
+    public void clearField() {
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+                fieldpanel.clearCell(i,j);
+    }
 
     public void disableField(){fieldpanel.setOff();}
     public void enableField(){fieldpanel.setOn(); System.out.println("Enabling (Menu)");}
