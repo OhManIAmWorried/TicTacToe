@@ -41,7 +41,12 @@ public class XOButton extends JButton implements ActionListener{
             toPlay.setElement(indexi, indexj);
             revalidate();
             repaint();
-            toPlay.nextTurn();
+            SwingUtilities.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    toPlay.nextTurn();
+                }
+            });
         }
     }
 

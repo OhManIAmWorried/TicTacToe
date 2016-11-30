@@ -2,28 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6fea414-7682-4fba-b1c3-fa6641fa1382" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/CS/CS_Milk.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/CS/CS_Milk.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/CS/ColorScheme.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/CS/ColorScheme.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Menu.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/FieldPanel.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/FieldPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/MMenuPanel$1.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/MMenuPanel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/MMenuPanel.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/MMenuPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$1.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$2.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$3.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$4.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$5.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/Panels/NamePanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Graphics/XOButton.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Graphics/XOButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Logic/PC.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Logic/PC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/Logic/toPlay.class" afterPath="$PROJECT_DIR$/out/production/Ерунда/Logic/toPlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/CS/CS_Milk.java" afterPath="$PROJECT_DIR$/Graphics/CS/CS_Milk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/CS/ColorScheme.java" afterPath="$PROJECT_DIR$/Graphics/CS/ColorScheme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Menu.form" afterPath="$PROJECT_DIR$/Graphics/Menu.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Menu.java" afterPath="$PROJECT_DIR$/Graphics/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Panels/FieldPanel.java" afterPath="$PROJECT_DIR$/Graphics/Panels/FieldPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java" afterPath="$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Panels/NamePanel.java" afterPath="$PROJECT_DIR$/Graphics/Panels/NamePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/XOButton.java" afterPath="$PROJECT_DIR$/Graphics/XOButton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/PC.java" afterPath="$PROJECT_DIR$/Logic/PC.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/toPlay.java" afterPath="$PROJECT_DIR$/Logic/toPlay.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Ерунда/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/Ерунда/.idea/workspace.xml" />
     </list>
     <ignored path="Ерунда.iws" />
@@ -49,10 +37,12 @@
       <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphics/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1277">
-              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+            <state relative-caret-position="1207">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3079#3080#0" expanded="true" />
+                <element signature="e#3121#3122#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,18 +51,18 @@
       <file leaf-file-name="ColorScheme.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphics/CS/ColorScheme.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="408">
               <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CS_Milk.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CS_Milk.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphics/CS/CS_Milk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,7 +78,7 @@
       <file leaf-file-name="MMenuPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="374">
               <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -101,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/Graphics/Panels/FieldPanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,8 +102,8 @@
       <file leaf-file-name="PC.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/PC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-237">
-              <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
+            <state relative-caret-position="1564">
+              <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -122,20 +112,22 @@
       <file leaf-file-name="NamePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Graphics/Panels/NamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="2142">
+              <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5137#5138#0" expanded="true" />
+                <element signature="e#5216#5217#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XOButton.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="XOButton.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Graphics/XOButton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="86" />
+            <state relative-caret-position="240">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,8 +136,8 @@
       <file leaf-file-name="toPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Logic/toPlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -179,17 +171,17 @@
         <option value="$PROJECT_DIR$/Graphics/CPanel.java" />
         <option value="$PROJECT_DIR$/Graphics/ColorScheme/CS_Milk.java" />
         <option value="$PROJECT_DIR$/Graphics/Panels/CPanel.java" />
-        <option value="$PROJECT_DIR$/Logic/toPlay.java" />
         <option value="$PROJECT_DIR$/Logic/Human.java" />
-        <option value="$PROJECT_DIR$/Logic/PC.java" />
         <option value="$PROJECT_DIR$/Graphics/CS/ColorScheme.java" />
-        <option value="$PROJECT_DIR$/Graphics/XOButton.java" />
         <option value="$PROJECT_DIR$/Graphics/Panels/FieldPanel.java" />
         <option value="$PROJECT_DIR$/Graphics/Menu.java" />
         <option value="$PROJECT_DIR$/Graphics/Menu.form" />
         <option value="$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java" />
-        <option value="$PROJECT_DIR$/Graphics/Panels/NamePanel.java" />
         <option value="$PROJECT_DIR$/Graphics/CS/CS_Milk.java" />
+        <option value="$PROJECT_DIR$/Graphics/XOButton.java" />
+        <option value="$PROJECT_DIR$/Logic/PC.java" />
+        <option value="$PROJECT_DIR$/Graphics/Panels/NamePanel.java" />
+        <option value="$PROJECT_DIR$/Logic/toPlay.java" />
       </list>
     </option>
   </component>
@@ -210,7 +202,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -223,63 +215,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graphics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TicTacToe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graphics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="RunManager" selected="Application.Menu">
     <configuration default="false" name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -613,7 +549,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="776" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -622,7 +558,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23308271" sideWeight="0.503125" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32692307" sideWeight="0.496875" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.496875" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -663,12 +599,83 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Graphics/CS/CS_Milk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Menu.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Panels/FieldPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/PC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Panels/NamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5216#5217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/XOButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/toPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Graphics/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,6 +719,8 @@
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5216#5217#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -720,10 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,6 +746,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -757,9 +764,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -767,10 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,6 +797,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,9 +807,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -814,10 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -851,6 +847,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -859,9 +857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -869,10 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -880,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -923,10 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="e#346#347#0" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,25 +924,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/PC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-237">
-          <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logic/toPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Graphics/CS/ColorScheme.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="408">
           <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
           <folding />
         </state>
@@ -973,47 +943,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Graphics/XOButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Graphics/Panels/FieldPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Graphics/Panels/NamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Graphics/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1277">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Graphics/Panels/MMenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="374">
           <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1023,8 +955,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Graphics/CS/CS_Milk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3079#3080#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Panels/FieldPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/Panels/NamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2142">
+          <caret line="138" column="38" selection-start-line="138" selection-start-column="38" selection-end-line="138" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5216#5217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/PC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logic/toPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Graphics/XOButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>

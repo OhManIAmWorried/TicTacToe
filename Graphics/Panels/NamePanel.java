@@ -149,7 +149,13 @@ public class NamePanel extends JPanel{
                 player1.setName(tf1.getText());
                 player2.setName(tf2.getText());
                 int n = 3;
-                new toPlay(player1, player2, n);
+
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        new toPlay(player1, player2, n);
+                    }
+                });
             }
         });
     }
