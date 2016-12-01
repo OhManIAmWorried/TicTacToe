@@ -95,6 +95,11 @@ public class Menu extends JFrame{
     private void createUIComponents() {}
 
     public static void showWin(Boolean offline, Boolean win, String name){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (offline) {
             if (win) offrespanel.showWin(name);
             else offrespanel.showTie();
@@ -111,8 +116,9 @@ public class Menu extends JFrame{
                 fieldpanel.clearCell(i,j);
     }
 
+    public void doHighlight(int i, int j){fieldpanel.doMarkCell(i,j);}
     public void disableField(){fieldpanel.setOff();}
-    public void enableField(){fieldpanel.setOn(); System.out.println("Enabling (Menu)");}
+    public void enableField(){fieldpanel.setOn(); /*System.out.println("Enabling (Menu)");*/}
     public void setCell(int i, int j){fieldpanel.setCell(i,j);}
 }
 

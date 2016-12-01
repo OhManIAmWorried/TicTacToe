@@ -43,12 +43,12 @@ public class FieldPanel extends JPanel {
     public void setOn() {
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++) {
-                System.out.println("Enabeling (Field)");
+                //System.out.println("Enabling (FieldPanel)");
                 cells[i][j].setEnabled();
-                cells[i][j].revalidate();
             }
     }
 
-    public void clearCell(int i, int j){cells[i][j].putBlank();System.out.println("Cleared");}
-    public void setCell(int i, int j){cells[i][j].doClick(); System.out.println("Clicked");}
+    public void doMarkCell(int i, int j){cells[i][j].doHighlight();}
+    public void clearCell(int i, int j){cells[i][j].putBlank();}
+    public void setCell(int i, int j){cells[i][j].doClick();}
 }

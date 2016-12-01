@@ -3,6 +3,8 @@ package Logic;
 import Graphics.*;
 import Logic.*;
 
+import javax.swing.*;
+
 public class toPlay
 {
     private static boolean turn;  //флаг на валидность того что ходит первый игрок
@@ -37,7 +39,10 @@ public class toPlay
         Menu.getMenu().disableField();
         if (field.isWin(turn)) endOfGame(true);
         else if (field.isFull()) endOfGame(false);
-        else {turn = !turn; toMove();}
+        else {
+            turn = !turn;
+            toMove();
+        }
     }
 
     public static void toMove(){                          //сюда ссылается nextTurn
@@ -49,13 +54,17 @@ public class toPlay
     public static void setElement(int i, int j){field.setElement(i,j,turn);}
 
     public static void endOfGame(boolean win){
-        Menu.getMenu().clShow("4");
-        if (win)
-            if (turn) {
-                Menu.showWin(true,true,player1.getName());
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Menu.getMenu().clShow("4");
+                if (win) {
+                    if (turn) Menu.showWin(true, true, player1.getName());
+                    else Menu.showWin(true, true, player2.getName());
+                } else {
+                    Menu.showWin(true, false, "");
+                }
             }
-            else Menu.showWin(true,true,player2.getName());
-        else
-            Menu.showWin(true,false,"");
+        });
     }
 }

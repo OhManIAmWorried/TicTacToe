@@ -78,10 +78,8 @@ public class PC implements Player {
 
     public void toMove(){
         int[] posYX = new int[2];
-        posYX[0] = -1;
-        posYX[1] = -1;
-        //Menu.enableField();
-        System.out.println(name + " is here");
+        posYX[0] = -1; posYX[1] = -1;
+        System.out.println(name + " is here (PC)");
         if (Field.isEmpty()) {
             int[][] pos = {{0,0}, {0,2}, {2,0}, {2,2}, {1,1}};
             int n = (int) Math.round(Math.random()*4);
@@ -91,7 +89,6 @@ public class PC implements Player {
         {
             posYX = putSomewhere();
         }
-        System.out.println("I am about to place the symbol");
         Menu.getMenu().enableField();
 
         try {

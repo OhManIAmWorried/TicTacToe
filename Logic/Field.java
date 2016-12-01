@@ -3,6 +3,10 @@ package Logic;
 /*Template for 3x3 5x5 and so on classes, we need to set the value of n в конструкторе and write the body of isWin to create the field*/
 /*Трафарет для 3х3 5х5 итд. классов, нам необходимо установить значение n в конструкторе и написать тело isWin для создания поля*/
 
+import Graphics.Menu;
+
+import javax.swing.*;
+
 abstract class Field{
     static int n;                     // number of elements per side / число элементов на сторону
     static boolean element[][];       // matrix of states player1 or player2, I believe. / матрица состояний, игрок1 или игрок 2, полагаю
@@ -65,25 +69,40 @@ class Field3x3 extends Field{
         for (int i=0; i<3; i++){                                                                    //in width
             if (occupancy[i][0] && occupancy[i][1] && occupancy[i][2])
                 if (element[i][0] == value && element[i][1] == value && element[i][2] == value){
+                    Menu.getMenu().doHighlight(i,0);
+                    Menu.getMenu().doHighlight(i,1);
+                    Menu.getMenu().doHighlight(i,2);
                     result = true;
                     break;
                 }
 
             if (occupancy[0][i] && occupancy[1][i] && occupancy[2][i])                              //in height
                 if (element[0][i] == value && element[1][i] == value && element[2][i] == value){
+                    Menu.getMenu().doHighlight(0,i);
+                    Menu.getMenu().doHighlight(1,i);
+                    Menu.getMenu().doHighlight(2,i);
                     result = true;
                     break;
                 }
         }
 
         if (occupancy[0][0] && occupancy[1][1] && occupancy[2][2])                                  //main diagonal
-            if (element[0][0] == value && element[1][1] == value && element[2][2] == value)
+            if (element[0][0] == value && element[1][1] == value && element[2][2] == value) {
+                Menu.getMenu().doHighlight(0,0);
+                Menu.getMenu().doHighlight(1,1);
+                Menu.getMenu().doHighlight(2,2);
                 result = true;
+            }
 
         if (occupancy[0][2] && occupancy[1][1] && occupancy[2][0])                                  //semi diagonal
-            if (element[0][2] == value && element[1][1] == value && element[2][0] == value)
+            if (element[0][2] == value && element[1][1] == value && element[2][0] == value) {
+                Menu.getMenu().doHighlight(0,2);
+                Menu.getMenu().doHighlight(1,1);
+                Menu.getMenu().doHighlight(2,0);
                 result = true;
+            }
 
+        System.out.println(result + " (Field)");
         return result;
     }
 }
