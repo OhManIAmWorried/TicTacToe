@@ -13,7 +13,6 @@ public class Statistic {
     private int size;
 
     public Statistic() throws Exception{
-        size = 0;
         StatsArr = readStats();
     }
 
@@ -37,17 +36,17 @@ public class Statistic {
     public void writeStats() throws Exception{
         RandomAccessFile f = new RandomAccessFile(dir, "rw");
         for (int i = 0; i<size; i++){
-            writeResult(f, 91*i, StatsArr[i]);
+            writeResult(f, 51*i, StatsArr[i]);
         }
         f.close();
     }
 
     private void writeResult(RandomAccessFile file, int pos, Result t) throws Exception {
         file.seek(pos);
-        for (int i = t.Name1.length(); i < 21; i++)
+        for (int i = t.Name1.length(); i < 20; i++)
             t.Name1 = t.Name1 + " ";
 
-        for (int i = t.Name2.length(); i < 21; i++)
+        for (int i = t.Name2.length(); i < 20; i++)
             t.Name2 = t.Name2 + " ";
 
 
@@ -59,6 +58,7 @@ public class Statistic {
 
 
     public Result[] readStats() throws Exception{
+        size=0;
         RandomAccessFile f = new RandomAccessFile(dir, "rw");
         Result[] arr = new Result[10];
         for (int i = 0; i<f.length()/51; i++){
@@ -73,19 +73,22 @@ public class Statistic {
         Result t = new Result();
         int b;
         // побитово читаем символы и плюсуем их в строку
-
+        t.Name1 = "";
         for (int i = 0; i < 20; i++) {
             b = file.read();
             t.Name1 = t.Name1 + (char) b;
         }
+        t.Name1 = t.Name1.trim();
 
+        t.Name2="";
         for (int i = 0; i < 20; i++) {
             b = file.read();
             t.Name2 = t.Name2 + (char) b;
         }
+        t.Name2 = t.Name2.trim();
 
-
-        for (int i = 0; i < 4; i++) {
+        t.Res="";
+        for (int i = 0; i < 3; i++) {
             b = file.read();
             t.Res = t.Res + (char) b;
         }

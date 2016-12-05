@@ -20,14 +20,19 @@ public class StatsPanel extends JPanel {
     }
 
     public void Upgrade(){
-        label = new JLabel[4][stat.getSize()];
         try {
             stat.readStats();
         } catch (Exception e){
 
         }
+        label = new JLabel[4][stat.getSize()];
         Result[] res = stat.getStatsArr();
+        System.out.println(stat.getSize());
         for (int i = 0; i < stat.getSize(); i++) {
+            System.out.println(i);
+            System.out.println(res[i].Name1+"____"+res[i].Res+ "____"+res[i].Name2+ "____"+res[i].Time.getTime());
+          /*  for(int j=0; j<5; j++)
+                label[j][i] = new JLabel();
             label[0][i].setText(res[i].Name1);
             label[1][i].setText(res[i].Res);
             label[2][i].setText(res[i].Name2);
@@ -35,7 +40,7 @@ public class StatsPanel extends JPanel {
             this.add(label[0][i]);
             this.add(label[1][i]);
             this.add(label[2][i]);
-            this.add(label[3][i]);
+            this.add(label[3][i]);*/
         }
     }
 }

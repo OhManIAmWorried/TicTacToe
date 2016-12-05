@@ -13,9 +13,9 @@ public class Result {
   public  Date Time;
 
     public Result() {
-        Name1 = "Vasya";
-        Name2 = "Siri";
-        Res = "1:0";
+        Name1 = "";
+        Name2 = "";
+        Res = "";
         Time = new Date();
     }
 
