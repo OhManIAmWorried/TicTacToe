@@ -58,19 +58,13 @@ public class Menu extends JFrame{
         fieldpanel = new FieldPanel(n);
         namepanel = new NamePanel();
         offrespanel = new OffResPanel();
-
-        try{
-            statspanel = new StatsPanel();
-            contentpanel.add(statspanel, "5");
-        } catch (Exception ex){
-
-        }
+        statspanel = new StatsPanel();
 
         contentpanel.add(mmenupanel,"1");
         contentpanel.add(fieldpanel,"2");
         contentpanel.add(namepanel,"3");
         contentpanel.add(offrespanel,"4");
-
+        contentpanel.add(statspanel, "5");
     }
 
     private void Defaults(){

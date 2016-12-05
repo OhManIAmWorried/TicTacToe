@@ -1,7 +1,10 @@
 package Logic;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Date;
 import java.io.RandomAccessFile;
+import java.util.Random;
 
 /**
  * Created by Alex on 02.12.2016.
@@ -12,7 +15,7 @@ public class Statistic {
     private Result[] StatsArr;
     private int size;
 
-    public Statistic() throws Exception{
+    public Statistic(){
         StatsArr = readStats();
     }
 
@@ -33,12 +36,20 @@ public class Statistic {
         size++;
     }
 
-    public void writeStats() throws Exception{
-        RandomAccessFile f = new RandomAccessFile(dir, "rw");
-        for (int i = 0; i<size; i++){
-            writeResult(f, 51*i, StatsArr[i]);
+    public void writeStats() {
+        try {
+            RandomAccessFile f = new RandomAccessFile(dir, "rw");
+            for (int i = 0; i<size; i++){
+                writeResult(f, 51*i, StatsArr[i]);
+            }
+            f.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        f.close();
     }
 
     private void writeResult(RandomAccessFile file, int pos, Result t) throws Exception {
@@ -57,44 +68,62 @@ public class Statistic {
     }
 
 
-    public Result[] readStats() throws Exception{
+    public Result[] readStats(){
         size=0;
-        RandomAccessFile f = new RandomAccessFile(dir, "rw");
         Result[] arr = new Result[10];
-        for (int i = 0; i<f.length()/51; i++){
-            arr[i] = getOne(f, 51*i);
-            size++;
+        RandomAccessFile f;
+        try {
+            f = new RandomAccessFile(dir, "rw");
+            for (int i = 0; i<f.length()/51; i++){
+                arr[i] = getOne(dir, 51*i);
+                size++;
+            }
+            f.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return arr;
     }
 
-    private Result getOne(RandomAccessFile file, int pos) throws Exception {
-        file.seek(pos);
+    private Result getOne(String dir, int pos) {
         Result t = new Result();
-        int b;
-        // побитово читаем символы и плюсуем их в строку
-        t.Name1 = "";
-        for (int i = 0; i < 20; i++) {
-            b = file.read();
-            t.Name1 = t.Name1 + (char) b;
+        try {
+            RandomAccessFile file = new RandomAccessFile(dir,"rw");
+            file.seek(pos);
+            int b;
+            // побитово читаем символы и плюсуем их в строку
+            t.Name1 = "";
+            for (int i = 0; i < 20; i++) {
+                b = file.read();
+                t.Name1 = t.Name1 + (char) b;
+            }
+
+            t.Name1 = t.Name1.trim();
+
+            t.Name2="";
+            for (int i = 0; i < 20; i++) {
+                b = file.read();
+                t.Name2 = t.Name2 + (char) b;
+            }
+            t.Name2 = t.Name2.trim();
+
+            t.Res="";
+            for (int i = 0; i < 3; i++) {
+                b = file.read();
+                t.Res = t.Res + (char) b;
+            }
+
+            t.Time = new Date(file.readLong());
+
+            file.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        t.Name1 = t.Name1.trim();
-
-        t.Name2="";
-        for (int i = 0; i < 20; i++) {
-            b = file.read();
-            t.Name2 = t.Name2 + (char) b;
-        }
-        t.Name2 = t.Name2.trim();
-
-        t.Res="";
-        for (int i = 0; i < 3; i++) {
-            b = file.read();
-            t.Res = t.Res + (char) b;
-        }
-
-        t.Time = new Date(file.readLong());
-
         return t;
     }
 }

@@ -13,7 +13,7 @@ public class StatsPanel extends JPanel {
     Statistic stat;
     JLabel[][] label;
 
-    public StatsPanel() throws Exception {
+    public StatsPanel(){
         setLayout(new GridLayout(4, 10));
         stat = new Statistic();
         Upgrade();
