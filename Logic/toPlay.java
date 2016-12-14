@@ -4,6 +4,7 @@ import Graphics.*;
 import Logic.*;
 
 import javax.swing.*;
+import java.util.Date;
 
 public class toPlay
 {
@@ -58,11 +59,27 @@ public class toPlay
             @Override
             public void run() {
                 Menu.getMenu().clShow("4");
+                Result r = new Result(player1.getName(), player2.getName(), "0:0" , new Date());
+
                 if (win) {
-                    if (turn) Menu.showWin(true, true, player1.getName());
-                    else Menu.showWin(true, true, player2.getName());
+                    if (turn) {
+                        Menu.getMenu().showWin(true, true, player1.getName());
+                        r = new Result(player1.getName(), player2.getName(), "1:0" , new Date());
+                    }
+                    else {
+                        Menu.getMenu().showWin(true, true, player2.getName());
+                        r = new Result(player1.getName(), player2.getName(), "0:1" , new Date());
+                    }
                 } else {
-                    Menu.showWin(true, false, "");
+                    Menu.getMenu().showWin(true, false, "");
+                }
+
+                try{
+                    Statistic s = new Statistic();
+                    s.addElement(r);
+                    s.writeStats();
+                } catch(Exception e){
+                    e.printStackTrace();
                 }
             }
         });

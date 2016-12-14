@@ -105,7 +105,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player1 = new PC();
-                Menu.setPlayer1(player1);
+                Menu.getMenu().setPlayer1(player1);
                 String n = Menu.setName();
                 player1.setName(n);
                 tf1.setText(player1.getName());
@@ -116,7 +116,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player1 = new Human();
-                Menu.setPlayer1(player1);
+                Menu.getMenu().setPlayer1(player1);
                 player1.setName("Mr. Nobody");
                 tf1.setText("Mr. Nobody");
             }
@@ -126,7 +126,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player2 = new PC();
-                Menu.setPlayer2(player2);
+                Menu.getMenu().setPlayer2(player2);
                 String n = Menu.setName();
                 player2.setName(n);
                 tf2.setText(player2.getName());
@@ -137,7 +137,7 @@ public class NamePanel extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 player2 = new Human();
-                Menu.setPlayer2(player2);
+                Menu.getMenu().setPlayer2(player2);
                 player2.setName("Ms. Nobody");
                 tf2.setText("Ms. Nobody");
             }

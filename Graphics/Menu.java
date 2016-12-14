@@ -30,14 +30,14 @@ public class Menu extends JFrame{
     private static int n;               //elements per edge            //Кол-во элементов на сторону
     private static ColorScheme cs;       //color scheme                 //Цветовая схема, доступна из Logic и Graphics, что берут её из Graphics.Menu.cs
 
-    private static Player player1;
-    private static Player player2;
+    private Player player1;
+    private Player player2;
 
     private static Menu amenu;
 
-    public static void setPlayer1(Player that) {player1 = that;}
+    public void setPlayer1(Player that) {this.player1 = that;}
 
-    public static void setPlayer2(Player that) {player2 = that;}
+    public void setPlayer2(Player that) {this.player2 = that;}
 
     public void setColorScheme(ColorScheme that) {cs = that;}
     public static ColorScheme getCs() {return cs;}
@@ -103,18 +103,7 @@ public class Menu extends JFrame{
 
     private void createUIComponents() {}
 
-    public static void showWin(Boolean offline, Boolean win, String name){
-
-        Result r = new Result(player1.getName(), player2.getName(), "1:0" , new Date());
-
-        try{
-            Statistic s = new Statistic();
-            s.addElement(r);
-            s.writeStats();
-        } catch(Exception e){
-            e.printStackTrace();
-        }
-
+    public void showWin(Boolean offline, Boolean win, String name){
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
