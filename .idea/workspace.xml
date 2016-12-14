@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="911c46f1-95ec-40c3-820f-dbb2c0993db5" name="Default" comment="XOButton now has an ability to change the icon">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/Panels/OffResPanel$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/Panels/OffResPanel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/CS/CS_Milk.java" afterPath="$PROJECT_DIR$/Graphics/CS/CS_Milk.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/CS/ColorScheme.java" afterPath="$PROJECT_DIR$/Graphics/CS/ColorScheme.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Menu.java" afterPath="$PROJECT_DIR$/Graphics/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/Panels/OffResPanel.java" afterPath="$PROJECT_DIR$/Graphics/Panels/OffResPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/XOButton.java" afterPath="$PROJECT_DIR$/Graphics/XOButton.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Logic/Result.java" afterPath="$PROJECT_DIR$/Logic/Result.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stat.txt" afterPath="$PROJECT_DIR$/Stat.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/production/TicTacToe/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Stat.txt" afterPath="$PROJECT_DIR$/out/production/TicTacToe/Stat.txt" />
+    <list default="true" id="911c46f1-95ec-40c3-820f-dbb2c0993db5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/CS/CS_Milk.class" afterPath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/CS/CS_Milk.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/CS/ColorScheme.class" afterPath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/CS/ColorScheme.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/Menu.class" afterPath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/XOButton.class" afterPath="$PROJECT_DIR$/out/production/TicTacToe/Graphics/XOButton.class" />
     </list>
     <ignored path="TicTacToe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -553,15 +545,23 @@
       <option name="presentableId" value="Default" />
       <updated>1480691711872</updated>
     </task>
+    <task id="LOCAL-00001" summary="XOButton now has an ability to change the icon">
+      <created>1481745103416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1481745103416</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
