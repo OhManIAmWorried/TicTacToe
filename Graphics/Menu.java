@@ -104,13 +104,15 @@ public class Menu extends JFrame{
     private void createUIComponents() {}
 
     public static void showWin(Boolean offline, Boolean win, String name){
+
         Result r = new Result(player1.getName(), player2.getName(), "1:0" , new Date());
+
         try{
             Statistic s = new Statistic();
             s.addElement(r);
             s.writeStats();
         } catch(Exception e){
-
+            e.printStackTrace();
         }
 
         try {

@@ -20,8 +20,7 @@ public class OffResPanel extends JPanel {
 
         setBackground(cs.CONTPANEL_BG);
         contbutton.setBackground(cs.BUTTON_PRIMARY_BG);
-        contbutton.setForeground(cs.BUTTON_PRIMARY_FG);
-
+        contbutton.setForeground(/*Color.RED*/cs.BUTTON_PRIMARY_FG);
         add(contbutton);
 
         contbutton.addActionListener(new ActionListener() {

@@ -20,6 +20,8 @@ public class CS_Milk extends ColorScheme{
         RADIOBUTTON_BG = new Color(40,40,40);
         RADIOBUTTON_FG = new Color(241,232,198);
         LABEL_FG = new Color(241,232,198);
+        X_ICONDIR = "X_Milk.png";
+        O_ICONDIR = "O_Milk.png";
     }
 }
 

@@ -1,6 +1,8 @@
 package Graphics.CS;
 
+import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 /**
  * Created by Oly on 25.11.2016.
@@ -23,5 +25,7 @@ public abstract class ColorScheme {
     public static Color RADIOBUTTON_BG;     //Radio button background
     public static Color RADIOBUTTON_FG;     //Radio button foreground
     public static Color LABEL_FG;           //Label foreground
+    public static String X_ICONDIR;
+    public static String O_ICONDIR;
 }
 

@@ -7,10 +7,10 @@ import java.util.Date;
  */
 public class Result {
 
-  public  String Name1;
-  public  String Name2;
-  public  String Res;
-  public  Date Time;
+  public String Name1;
+  public String Name2;
+  public String Res;
+  public Date Time;
 
     public Result() {
         Name1 = "";

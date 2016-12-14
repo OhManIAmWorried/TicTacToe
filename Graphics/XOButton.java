@@ -22,8 +22,8 @@ public class XOButton extends JButton implements ActionListener{
         indexj = j;
         setBackground(Menu.getMenu().getCs().FIELDCELL_BG);
         setBorder(new MatteBorder(1, 1, 1, 1, Menu.getMenu().getCs().FIELDCELL_BORDER));
-        X = new ImageIcon(this.getClass().getResource("x.png"));
-        O = new ImageIcon(this.getClass().getResource("o.png"));
+        X = new ImageIcon(this.getClass().getResource(Menu.getMenu().getCs().X_ICONDIR));
+        O = new ImageIcon(this.getClass().getResource(Menu.getMenu().getCs().O_ICONDIR));
         this.addActionListener(this);
         occupied = false;
     }
@@ -60,13 +60,8 @@ public class XOButton extends JButton implements ActionListener{
     }
 
     public void doHighlight() {
-        //SwingUtilities.invokeLater(new Runnable() {
-        //    @Override
-        //    public void run() {
-                setBackground(Menu.getMenu().getCs().FIELDCELLWIN_BG);
-                System.out.println("Highlighted (XOButton)");
-        //    }
-        //});
+        setBackground(Menu.getMenu().getCs().FIELDCELLWIN_BG);
+        System.out.println("Highlighted (XOButton)");
     }
 
     public void putBlank(){
