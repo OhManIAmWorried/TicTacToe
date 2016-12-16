@@ -43,4 +43,8 @@ public class StatsPanel extends JPanel {
             this.add(label[3][i]);
         }
     }
+
+    public void updateColors(){
+
+    }
 }

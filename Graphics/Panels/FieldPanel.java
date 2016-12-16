@@ -13,13 +13,13 @@ public class FieldPanel extends JPanel {
     private static ColorScheme cs;
     private static int n;
 
-    public void reUpdate() {
+    public void updateColors() {
         cs = Menu.getMenu().getCs();
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++){
-                cells[i][j].setBackground(cs.FIELDCELL_BG);
-                cells[i][j].setBorder(new MatteBorder(1, 1, 1, 1, Menu.getMenu().getCs().FIELDCELL_BORDER));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                cells[i][j].updateColors();
             }
+        }
     }
 
     public FieldPanel(int n) {
@@ -31,7 +31,7 @@ public class FieldPanel extends JPanel {
                 cells[i][j] = new XOButton(i, j);
                 add(cells[i][j]);
             }
-        reUpdate();
+        updateColors();
     }
 
     public void setOff() {
@@ -42,10 +42,7 @@ public class FieldPanel extends JPanel {
 
     public void setOn() {
         for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++) {
-                //System.out.println("Enabling (FieldPanel)");
-                cells[i][j].setEnabled();
-            }
+            for (int j = 0; j < n; j++) {cells[i][j].setEnabled();}
     }
 
     public void doMarkCell(int i, int j){cells[i][j].doHighlight();}

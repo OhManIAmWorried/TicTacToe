@@ -6,6 +6,8 @@ import javax.swing.plaf.ButtonUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import Graphics.CS.ColorScheme;
 import Logic.*;
 
 import static Logic.toPlay.getTurn;
@@ -20,10 +22,7 @@ public class XOButton extends JButton implements ActionListener{
     public XOButton(int i,int j){
         indexi = i;
         indexj = j;
-        setBackground(Menu.getMenu().getCs().FIELDCELL_BG);
-        setBorder(new MatteBorder(1, 1, 1, 1, Menu.getMenu().getCs().FIELDCELL_BORDER));
-        X = new ImageIcon(this.getClass().getResource(Menu.getMenu().getCs().X_ICONDIR));
-        O = new ImageIcon(this.getClass().getResource(Menu.getMenu().getCs().O_ICONDIR));
+        updateColors();
         this.addActionListener(this);
         occupied = false;
     }
@@ -68,5 +67,13 @@ public class XOButton extends JButton implements ActionListener{
         setIcon(null);
         setBackground(Menu.getMenu().getCs().FIELDCELL_BG);
         occupied = false;
+    }
+
+    public void updateColors(){
+        ColorScheme cs = Menu.getMenu().getCs();
+        setBackground(cs.FIELDCELL_BG);
+        setBorder(new MatteBorder(1, 1, 1, 1, cs.FIELDCELL_BORDER));
+        X = new ImageIcon(this.getClass().getResource(cs.X_ICONDIR));
+        O = new ImageIcon(this.getClass().getResource(cs.O_ICONDIR));
     }
 }

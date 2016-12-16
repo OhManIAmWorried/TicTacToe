@@ -17,7 +17,7 @@ public class MMenuPanel extends JPanel{
     private static JButton chtbtn; //Chat button
     private ColorScheme cs;
 
-    public void reUpdate(){
+    public void updateColors(){
         cs = Menu.getCs();
 
         setBackground(cs.CONTPANEL_BG);
@@ -46,7 +46,7 @@ public class MMenuPanel extends JPanel{
         offbtn = new JButton("Offline mode");
         onlbtn = new JButton("Online mode");
         chtbtn = new JButton("Chat");
-        reUpdate();
+        updateColors();
         add(offbtn);
         add(onlbtn);
         add(chtbtn);

@@ -33,31 +33,7 @@ public class NamePanel extends JPanel{
     private static boolean sw2 = false;
     private static JPanel panel;
 
-    public NamePanel(){
-
-        player1 = new Human();
-        player2 = new Human();
-
-        group1 = new ButtonGroup();
-        rbtn11 = new JRadioButton("Computer", false);
-        rbtn12 = new JRadioButton("Human", true);
-        group1.add(rbtn11);
-        group1.add(rbtn12);
-        lbl1 = new JLabel("Player 1:");
-        tf1 = new JTextField("Mr. Nobody");              //One of my all-time favorite films  =P
-
-        group2 = new ButtonGroup();
-        rbtn21 = new JRadioButton("Computer", false);
-        rbtn22 = new JRadioButton("Human", true);
-        group2.add(rbtn21);
-        group2.add(rbtn22);
-        lbl2 = new JLabel("Player 2:");
-        tf2 = new JTextField("Ms. Nobody");
-
-        readybtn = new JButton("Ready");
-
-        panel = new JPanel();
-
+    public void updateColors(){
         ColorScheme cs = Menu.getMenu().getCs();
 
         lbl1.setBackground(cs.TEXTFIELD_BG);
@@ -83,6 +59,34 @@ public class NamePanel extends JPanel{
 
         setBorder(new MatteBorder(5, 5, 5, 5, cs.CONTPANEL_BG));
         readybtn.setBorder(new MatteBorder(10,0,5,0, cs.CONTPANEL_BG));
+    }
+
+    public NamePanel(){
+
+        player1 = new Human();
+        player2 = new Human();
+
+        group1 = new ButtonGroup();
+        rbtn11 = new JRadioButton("Computer", false);
+        rbtn12 = new JRadioButton("Human", true);
+        group1.add(rbtn11);
+        group1.add(rbtn12);
+        lbl1 = new JLabel("Player 1:");
+        tf1 = new JTextField("Mr. Nobody");              //One of my all-time favorite films  =P
+
+        group2 = new ButtonGroup();
+        rbtn21 = new JRadioButton("Computer", false);
+        rbtn22 = new JRadioButton("Human", true);
+        group2.add(rbtn21);
+        group2.add(rbtn22);
+        lbl2 = new JLabel("Player 2:");
+        tf2 = new JTextField("Ms. Nobody");
+
+        readybtn = new JButton("Ready");
+
+        panel = new JPanel();
+
+        updateColors();
 
         readybtn.setFont(new Font("Alien Encounters", Font.PLAIN, 19));
 

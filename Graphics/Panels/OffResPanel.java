@@ -12,16 +12,11 @@ public class OffResPanel extends JPanel {
     JButton contbutton;
 
     public OffResPanel() {
-        ColorScheme cs = Menu.getCs();
-
         contbutton = new JButton();
-
         setLayout(new BorderLayout());
-
-        setBackground(cs.CONTPANEL_BG);
-        contbutton.setBackground(cs.BUTTON_PRIMARY_BG);
-        contbutton.setForeground(/*Color.RED*/cs.BUTTON_PRIMARY_FG);
         add(contbutton);
+
+        updateColors();
 
         contbutton.addActionListener(new ActionListener() {
             @Override
@@ -29,6 +24,14 @@ public class OffResPanel extends JPanel {
                 Menu.getMenu().clShow("1");
             }
         });
+    }
+
+    public void updateColors(){
+        ColorScheme cs = Menu.getCs();
+
+        setBackground(cs.CONTPANEL_BG);
+        contbutton.setBackground(cs.BUTTON_PRIMARY_BG);
+        contbutton.setForeground(cs.BUTTON_PRIMARY_FG);
     }
 
     public void showWin(String name) {
