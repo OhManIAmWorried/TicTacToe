@@ -24,7 +24,7 @@ public class Statistic {
         return size;
     }
 
-    public Result[] getStatsArr() { return StatsArr;   }
+   // public Result[] getStatsArr() { return StatsArr;   }
 
     public void addElement(Result res){
         if (size==10)
@@ -64,11 +64,11 @@ public class Statistic {
         file.write(t.Name1.getBytes());
         file.write(t.Name2.getBytes());
         file.write(t.Res.getBytes());
-        file.writeLong(t.Time.getTime());
+        file.writeLong(t.Time);
     }
 
 
-    public Result[] readStats(){
+    public Result[]  readStats(){
         size=0;
         Result[] arr = new Result[10];
         RandomAccessFile f;
@@ -84,6 +84,10 @@ public class Statistic {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        for (int i = 0; i < getSize(); i++)
+            System.out.println(arr[i].Name1+"____"+arr[i].Res+ "____"+arr[i].Name2+ "____"+arr[i].Time);
+
+            System.out.println("ReadStats finised");
         return arr;
     }
 
@@ -115,7 +119,7 @@ public class Statistic {
                 t.Res = t.Res + (char) b;
             }
 
-            t.Time = new Date(file.readLong());
+            t.Time = file.readLong();
 
             file.close();
 

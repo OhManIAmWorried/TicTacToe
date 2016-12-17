@@ -53,22 +53,31 @@ public class toPlay
     }
 
     public static void setElement(int i, int j){field.setElement(i,j,turn);}
+    public static Date first;
+    public static Date second;
+    public static void setFirstDate(){
+        first = new Date();
+    }
+    public static void setSecondDate(){
+        second = new Date();
+    }
 
     public static void endOfGame(boolean win){
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 Menu.getMenu().clShow("4");
-                Result r = new Result(player1.getName(), player2.getName(), "0:0" , new Date());
+                toPlay.setSecondDate();
+                Result r = new Result(player1.getName(), player2.getName(), "0:0" , second.getTime() - first.getTime());
 
                 if (win) {
                     if (turn) {
                         Menu.getMenu().showWin(true, true, player1.getName());
-                        r = new Result(player1.getName(), player2.getName(), "1:0" , new Date());
+                        r = new Result(player1.getName(), player2.getName(), "1:0" , second.getTime() - first.getTime());
                     }
                     else {
                         Menu.getMenu().showWin(true, true, player2.getName());
-                        r = new Result(player1.getName(), player2.getName(), "0:1" , new Date());
+                        r = new Result(player1.getName(), player2.getName(), "0:1" , second.getTime() - first.getTime());
                     }
                 } else {
                     Menu.getMenu().showWin(true, false, "");

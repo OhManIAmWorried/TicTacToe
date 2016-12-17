@@ -153,7 +153,7 @@ public class NamePanel extends JPanel{
                 player1.setName(tf1.getText());
                 player2.setName(tf2.getText());
                 int n = 3;
-
+                toPlay.setFirstDate();
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {

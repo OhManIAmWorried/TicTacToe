@@ -94,7 +94,7 @@ public class Menu extends JFrame{
         statsbtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 clShow("5");
-                statspanel.Upgrade();
+                statspanel.Upgrade(true);
             }
         });
 
