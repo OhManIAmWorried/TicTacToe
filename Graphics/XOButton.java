@@ -18,6 +18,7 @@ public class XOButton extends JButton implements ActionListener{
     int indexi,indexj;
     boolean enabled;
     boolean occupied;
+    boolean ofirst;
 
     public XOButton(int i,int j){
         indexi = i;
@@ -25,6 +26,7 @@ public class XOButton extends JButton implements ActionListener{
         updateColors();
         this.addActionListener(this);
         occupied = false;
+        ofirst = false;
     }
 
     public void actionPerformed(ActionEvent e){
@@ -32,8 +34,8 @@ public class XOButton extends JButton implements ActionListener{
         if (!enabled) System.out.println("Disabled");
         if ((enabled) && !(occupied)) {
             System.out.println("Action performed (XOButton)");
-            if (toPlay.getTurn()) putO();
-            else putX();
+            if (toPlay.getTurn()) if (Menu.getMenu().getOFirst()) putO(); else putX();
+            else if (Menu.getMenu().getOFirst()) putX(); else putO();
             occupied = true;
             toPlay.setElement(indexi, indexj);
             revalidate();

@@ -1,6 +1,7 @@
 package Graphics.Panels;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.MatteBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -21,10 +22,13 @@ public class SettingsPanel extends JPanel {
     private JPanel modepan;
     private JPanel offpan;
     private JPanel onpan;
+    private JPanel iconpan;
 
     private JLabel cslabel;
     private JLabel offlabel;
     private JLabel onlabel;
+    private JLabel hostlabel;
+    private JLabel portlabel;
 
     private JButton returnbtn;
     private JButton confirmbtn;
@@ -33,16 +37,22 @@ public class SettingsPanel extends JPanel {
     private ColorScheme[] csschemes;
     private JList cslist;
 
-    private JCheckBox xfirstcheckb;
+    private JRadioButton xfirstrbtn;
+    private JRadioButton ofirstrbtn;
+    private ButtonGroup rgroup1;
+
     private JTextField hosttxtf;
     private JTextField porttxtf;
 
     private int csindex;
     private ColorScheme cs;
     private ColorScheme tmpcs;
+    private boolean ofirst;
+    private boolean tmpofirst;
 
     private void addAll(){
-        setLayout(new GridLayout(2,1));
+
+        setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
         add(higherpan);
         add(lowerpan);
 
@@ -50,21 +60,27 @@ public class SettingsPanel extends JPanel {
         higherpan.add(cspan);
         higherpan.add(modepan);
 
-        cspan.setLayout(new GridLayout(2,1));
-        cspan.add(cslabel);
-        cspan.add(new JScrollPane(cslist));
+        cspan.setLayout(new BorderLayout());
+        cspan.add(cslabel,BorderLayout.PAGE_START);
+        cspan.add(new JScrollPane(cslist),BorderLayout.CENTER);
 
-        modepan.setLayout(new GridLayout(2,1));
-        modepan.add(offpan);
-        modepan.add(onpan);
+        modepan.setLayout(new BorderLayout());
+        modepan.add(offpan,BorderLayout.PAGE_START);
+        modepan.add(onpan,BorderLayout.CENTER);
+
+        iconpan.setLayout(new GridLayout(1,2));
+        iconpan.add(ofirstrbtn);
+        iconpan.add(xfirstrbtn);
 
         offpan.setLayout(new GridLayout(2,1));
         offpan.add(offlabel);
-        offpan.add(xfirstcheckb);
+        offpan.add(iconpan);
 
-        onpan.setLayout(new GridLayout(3,1));
+        onpan.setLayout(new GridLayout(5,1));
         onpan.add(onlabel);
+        onpan.add(hostlabel);
         onpan.add(hosttxtf);
+        onpan.add(portlabel);
         onpan.add(porttxtf);
 
         lowerpan.setLayout(new GridLayout(1,2));
@@ -73,11 +89,16 @@ public class SettingsPanel extends JPanel {
     }
 
     private void setDefaults(int index) {
+        higherpan.setSize(400,210);
+        lowerpan.setSize(400,40);
         cslabel.setHorizontalAlignment(SwingConstants.CENTER);
         offlabel.setHorizontalAlignment(SwingConstants.CENTER);
         onlabel.setHorizontalAlignment(SwingConstants.CENTER);
         tmpcs = Menu.getMenu().getCs();
         csindex = index;
+        rgroup1 = new ButtonGroup();
+        rgroup1.add(ofirstrbtn);
+        rgroup1.add(xfirstrbtn);
         cslist.setVisibleRowCount(10);
         cslist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         cslist.setSelectedIndex(index);
@@ -99,20 +120,31 @@ public class SettingsPanel extends JPanel {
         modepan = new JPanel();
         offpan = new JPanel();
         onpan = new JPanel();
+        iconpan = new JPanel();
         cslabel = new JLabel("Color Scheme");
         offlabel = new JLabel("Offline mode");
         onlabel = new JLabel("Online mode");
+        hostlabel = new JLabel("host address:");
+        portlabel = new JLabel("port address:");
         returnbtn = new JButton("Return to Menu");
         confirmbtn = new JButton("Confirm");
         csnames = new String[]{"CS_Milk","CS_Ginger"};
         csschemes = new ColorScheme[]{new CS_Milk(), new CS_Ginger()};
         cslist = new JList(csnames);
-        xfirstcheckb = new JCheckBox("X first");
-        hosttxtf = new JTextField("host: ");
-        porttxtf = new JTextField("port: ");
+        if (Menu.getMenu() != null) ofirst = Menu.getMenu().getOFirst();
+        ofirstrbtn = new JRadioButton("O First",ofirst);
+        xfirstrbtn = new JRadioButton("X first",!ofirst);
+        hosttxtf = new JTextField();
+        porttxtf = new JTextField();
+    }
+
+    public void updateVariables(){
+        tmpofirst = Menu.getMenu().getOFirst();
+        tmpcs = Menu.getMenu().getCs();
     }
 
     public SettingsPanel(int index){
+        ofirst = true;
         createComponents();
         setDefaults(index);
         addAll();
@@ -122,6 +154,9 @@ public class SettingsPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Menu.getMenu().setCS(tmpcs);
+                ofirst = tmpofirst;
+                cslist.setSelectedIndex(Menu.getMenu().getCSIndex());
+                ofirstrbtn.setSelected(tmpofirst);
                 Menu.getMenu().updateColors();
                 Menu.getMenu().clShow("1");                    //Shows menu
             }
@@ -131,8 +166,23 @@ public class SettingsPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Menu.getMenu().setCS(cs);
+                Menu.getMenu().setOFirst(ofirst);
                 Menu.getMenu().setCSIndex(csindex);
                 Menu.getMenu().clShow("1");
+            }
+        });
+
+        ofirstrbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ofirst = true;
+            }
+        });
+
+        xfirstrbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ofirst = false;
             }
         });
     }
@@ -154,15 +204,17 @@ public class SettingsPanel extends JPanel {
         cslabel.setForeground(cs.LABEL_FG);
         offlabel.setForeground(cs.LABEL_FG);
         onlabel.setForeground(cs.LABEL_FG);
+        hostlabel.setForeground(cs.LABEL_FG);
+        portlabel.setForeground(cs.LABEL_FG);
         offpan.setBackground(cs.CONTPANEL_BG);
         onpan.setBackground(cs.CONTPANEL_BG);
         cspan.setBackground(cs.CONTPANEL_BG);
-        xfirstcheckb.setBackground(cs.CONTPANEL_BG);
-        xfirstcheckb.setForeground(cs.LABEL_FG);
+        ofirstrbtn.setBackground(cs.RADIOBUTTON_BG);
+        ofirstrbtn.setForeground(cs.RADIOBUTTON_FG);
+        xfirstrbtn.setBackground(cs.RADIOBUTTON_BG);
+        xfirstrbtn.setForeground(cs.RADIOBUTTON_FG);
         setBorder(new MatteBorder(5, 5, 5, 5, cs.CONTPANEL_BG));
         cspan.setBorder(new MatteBorder(5, 2, 5, 5, cs.CONTPANEL_BG));
         modepan.setBorder(new MatteBorder(5, 5, 5, 2, cs.CONTPANEL_BG));
     }
-
-    public void setTmpCS(ColorScheme that){tmpcs = that;}
 }

@@ -4,13 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 
 import Graphics.CS.*;
 import Graphics.Panels.*;
 import Logic.*;
-
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 
 public class Menu extends JFrame{
     private JPanel mainpanel;              //main panel                   //Главная, наерное, панель JFrame
@@ -22,19 +19,20 @@ public class Menu extends JFrame{
     private JButton settingsbtn;
     private JLabel tttlabel;
 
-    private static MMenuPanel mmenupanel;        //main menu panel         "1"  //Панель с тремя кнопками (Оффлайн, онлайн, чат)
-    private static FieldPanel fieldpanel;        //gamefield panel         "3"  //Панель с игровым полем
-    private static NamePanel namepanel;          //pre-offline game panel  "2"  //Панель с выбором типа игры и имён игроков для оффлайн режима
-    private static OffResPanel offrespanel;      //post-offline game panel "4"  //Панель результатов для оффлайн игры
-    private static StatsPanel statspanel;        //stats panel             "5"  //Панель статистики
-    private static SettingsPanel settingspanel;  //settings panel          "6"  //Панель настроек
-
+    private MMenuPanel mmenupanel;        //main menu panel         "1"  //Панель с тремя кнопками (Оффлайн, онлайн, чат)
+    private FieldPanel fieldpanel;        //gamefield panel         "3"  //Панель с игровым полем
+    private NamePanel namepanel;          //pre-offline game panel  "2"  //Панель с выбором типа игры и имён игроков для оффлайн режима
+    private OffResPanel offrespanel;      //post-offline game panel "4"  //Панель результатов для оффлайн игры
+    private StatsPanel statspanel;        //stats panel             "5"  //Панель статистики
+    private SettingsPanel settingspanel;  //settings panel          "6"  //Панель настроек
 
     private static CardLayout cl;
+
 
     private static int n;               //elements per edge            //Кол-во элементов на сторону
     private static int csindex;         //color scheme index           //Индекс цветовой схемы в массиве цветовых схем в настройках (SettingsPanel)
     private static ColorScheme cs;      //color scheme                 //Цветовая схема, доступна из Logic и Graphics, что берут её из Graphics.Menu.cs
+    private boolean ofirst;
 
     private Player player1;
     private Player player2;
@@ -76,6 +74,7 @@ public class Menu extends JFrame{
         n = 3;                     //клеток на сторону
         cs = new CS_Milk();   //цветовая схема
         csindex = 0;
+        ofirst = true;
         add(mainpanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(700,500);
@@ -101,7 +100,7 @@ public class Menu extends JFrame{
         settingsbtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                settingspanel.setTmpCS(cs);
+                settingspanel.updateVariables();
                 clShow("6");
             }
         });
@@ -158,5 +157,8 @@ public class Menu extends JFrame{
         statsbtn.setForeground(cs.BUTTON_PRIMARY_FG);
         tttlabel.setForeground(cs.LABEL_FG);
     }
+
+    public void setOFirst(boolean that) {ofirst = that;}
+    public boolean getOFirst() {return ofirst;}
 }
 
