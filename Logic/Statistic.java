@@ -1,10 +1,9 @@
 package Logic;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Date;
 import java.io.RandomAccessFile;
-import java.util.Random;
 
 /**
  * Created by Alex on 02.12.2016.
@@ -23,8 +22,6 @@ public class Statistic {
     public int getSize(){
         return size;
     }
-
-   // public Result[] getStatsArr() { return StatsArr;   }
 
     public void addElement(Result res){
         if (size==10)
@@ -84,11 +81,16 @@ public class Statistic {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for (int i = 0; i < getSize(); i++)
-            System.out.println(arr[i].Name1+"____"+arr[i].Res+ "____"+arr[i].Name2+ "____"+arr[i].Time);
-
-            System.out.println("ReadStats finised");
         return arr;
+    }
+
+    public void clear(){
+            try {
+                File f = new File(dir);
+                f.delete();
+            } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private Result getOne(String dir, int pos) {

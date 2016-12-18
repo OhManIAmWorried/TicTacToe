@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="14630" binding="backpanel" layout-manager="GridLayoutManager" row-count="8" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="14630" binding="backpanel" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -61,43 +61,6 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
-          <component id="dff03" class="javax.swing.JButton" binding="statsbtn">
-            <constraints>
-              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="100" height="20"/>
-                <preferred-size width="100" height="20"/>
-                <maximum-size width="-1" height="20"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-923450"/>
-              <foreground color="-15066082"/>
-              <hideActionText value="false"/>
-              <horizontalAlignment value="0"/>
-              <horizontalTextPosition value="11"/>
-              <text value="Stats"/>
-            </properties>
-          </component>
-          <component id="f179a" class="javax.swing.JButton" binding="settingsbtn">
-            <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="100" height="20"/>
-                <preferred-size width="100" height="20"/>
-                <maximum-size width="-1" height="20"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-923450"/>
-              <enabled value="true"/>
-              <foreground color="-15066082"/>
-              <text value="Settings"/>
-            </properties>
-          </component>
-          <hspacer id="28853">
-            <constraints>
-              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </hspacer>
           <vspacer id="a5e67">
             <constraints>
               <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -115,12 +78,12 @@
           </vspacer>
           <vspacer id="ecbc0">
             <constraints>
-              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <vspacer id="4c861">
             <constraints>
-              <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
           <component id="93eac" class="javax.swing.JLabel" binding="tttlabel">
@@ -129,7 +92,8 @@
             </constraints>
             <properties>
               <background color="-15066082"/>
-              <font name="DS Stamper" size="26" style="0"/>
+              <enabled value="true"/>
+              <font name="X-Files" size="26" style="0"/>
               <foreground color="-923450"/>
               <text value="Tic Tac Toe v0.1"/>
             </properties>

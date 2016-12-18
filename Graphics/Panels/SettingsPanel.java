@@ -26,9 +26,9 @@ public class SettingsPanel extends JPanel {
 
     private JLabel cslabel;
     private JLabel offlabel;
-    private JLabel onlabel;
-    private JLabel hostlabel;
-    private JLabel portlabel;
+    //private JLabel onlabel;
+    //private JLabel hostlabel;
+    //private JLabel portlabel;
 
     private JButton returnbtn;
     private JButton confirmbtn;
@@ -41,8 +41,8 @@ public class SettingsPanel extends JPanel {
     private JRadioButton ofirstrbtn;
     private ButtonGroup rgroup1;
 
-    private JTextField hosttxtf;
-    private JTextField porttxtf;
+    //private JTextField hosttxtf;
+    //private JTextField porttxtf;
 
     private int csindex;
     private ColorScheme cs;
@@ -77,11 +77,11 @@ public class SettingsPanel extends JPanel {
         offpan.add(iconpan);
 
         onpan.setLayout(new GridLayout(5,1));
-        onpan.add(onlabel);
-        onpan.add(hostlabel);
-        onpan.add(hosttxtf);
-        onpan.add(portlabel);
-        onpan.add(porttxtf);
+        //onpan.add(onlabel);
+        //onpan.add(hostlabel);
+    //    onpan.add(hosttxtf);
+        //onpan.add(portlabel);
+    //    onpan.add(porttxtf);
 
         lowerpan.setLayout(new GridLayout(1,2));
         lowerpan.add(returnbtn);
@@ -93,7 +93,7 @@ public class SettingsPanel extends JPanel {
         lowerpan.setSize(400,40);
         cslabel.setHorizontalAlignment(SwingConstants.CENTER);
         offlabel.setHorizontalAlignment(SwingConstants.CENTER);
-        onlabel.setHorizontalAlignment(SwingConstants.CENTER);
+        //onlabel.setHorizontalAlignment(SwingConstants.CENTER);
         tmpcs = Menu.getMenu().getCs();
         csindex = index;
         rgroup1 = new ButtonGroup();
@@ -122,10 +122,10 @@ public class SettingsPanel extends JPanel {
         onpan = new JPanel();
         iconpan = new JPanel();
         cslabel = new JLabel("Color Scheme");
-        offlabel = new JLabel("Offline mode");
-        onlabel = new JLabel("Online mode");
-        hostlabel = new JLabel("host address:");
-        portlabel = new JLabel("port address:");
+        offlabel = new JLabel(/*"Offline mode"*/"Game settings:");
+        //onlabel = new JLabel("Online mode");
+        //hostlabel = new JLabel("host address:");
+        //portlabel = new JLabel("port address:");
         returnbtn = new JButton("Return to Menu");
         confirmbtn = new JButton("Confirm");
         csnames = new String[]{"CS_Milk","CS_Ginger"};
@@ -134,8 +134,8 @@ public class SettingsPanel extends JPanel {
         if (Menu.getMenu() != null) ofirst = Menu.getMenu().getOFirst();
         ofirstrbtn = new JRadioButton("O First",ofirst);
         xfirstrbtn = new JRadioButton("X first",!ofirst);
-        hosttxtf = new JTextField();
-        porttxtf = new JTextField();
+    //    hosttxtf = new JTextField();
+    //    porttxtf = new JTextField();
     }
 
     public void updateVariables(){
@@ -203,9 +203,9 @@ public class SettingsPanel extends JPanel {
         cslist.setForeground(cs.TEXTFIELD_FG);
         cslabel.setForeground(cs.LABEL_FG);
         offlabel.setForeground(cs.LABEL_FG);
-        onlabel.setForeground(cs.LABEL_FG);
-        hostlabel.setForeground(cs.LABEL_FG);
-        portlabel.setForeground(cs.LABEL_FG);
+        //onlabel.setForeground(cs.LABEL_FG);
+        //hostlabel.setForeground(cs.LABEL_FG);
+        //portlabel.setForeground(cs.LABEL_FG);
         offpan.setBackground(cs.CONTPANEL_BG);
         onpan.setBackground(cs.CONTPANEL_BG);
         cspan.setBackground(cs.CONTPANEL_BG);
@@ -216,5 +216,9 @@ public class SettingsPanel extends JPanel {
         setBorder(new MatteBorder(5, 5, 5, 5, cs.CONTPANEL_BG));
         cspan.setBorder(new MatteBorder(5, 2, 5, 5, cs.CONTPANEL_BG));
         modepan.setBorder(new MatteBorder(5, 5, 5, 2, cs.CONTPANEL_BG));
+        returnbtn.setBorder(new MatteBorder(2, 2, 0, 4, cs.CONTPANEL_BG));
+        confirmbtn.setBorder(new MatteBorder(2, 4, 0, 2, cs.CONTPANEL_BG));
+        lowerpan.setBackground(cs.CONTPANEL_BG);
+        setBackground(cs.CONTPANEL_BG);
     }
 }

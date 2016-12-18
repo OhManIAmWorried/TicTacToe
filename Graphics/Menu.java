@@ -15,8 +15,6 @@ public class Menu extends JFrame{
     private JPanel contentpanel;           //buttons panel                //Панель в которую вставленны CardLayout панели с контентом
     private JPanel backpanel;              //main background panel        //главная большая панель фона, на ней widepanel
 
-    private JButton statsbtn;
-    private JButton settingsbtn;
     private JLabel tttlabel;
 
     private MMenuPanel mmenupanel;        //main menu panel         "1"  //Панель с тремя кнопками (Оффлайн, онлайн, чат)
@@ -89,21 +87,6 @@ public class Menu extends JFrame{
         updateColors();
         clShow("1");
         setVisible(true);
-
-        statsbtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                clShow("5");
-                statspanel.Upgrade(true);
-            }
-        });
-
-        settingsbtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                settingspanel.updateVariables();
-                clShow("6");
-            }
-        });
     }
 
     public void clShow(String name){
@@ -151,14 +134,13 @@ public class Menu extends JFrame{
         backpanel.setBackground(cs.BACKPANEL_BG);
         widepanel.setBackground(cs.WIDEPANEL_BG);
         contentpanel.setBackground(cs.CONTPANEL_BG);
-        settingsbtn.setBackground(cs.BUTTON_PRIMARY_BG);
-        settingsbtn.setForeground(cs.BUTTON_PRIMARY_FG);
-        statsbtn.setBackground(cs.BUTTON_PRIMARY_BG);
-        statsbtn.setForeground(cs.BUTTON_PRIMARY_FG);
         tttlabel.setForeground(cs.LABEL_FG);
     }
 
     public void setOFirst(boolean that) {ofirst = that;}
     public boolean getOFirst() {return ofirst;}
+
+    public void updateStats(){statspanel.upgrade(true);}
+    public void updateSettingsPanelVariables(){settingspanel.updateVariables();}
 }
 
