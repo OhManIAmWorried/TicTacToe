@@ -23,6 +23,7 @@ public class Menu extends JFrame{
     private OffResPanel offrespanel;      //post-offline game panel "4"  //Панель результатов для оффлайн игры
     private StatsPanel statspanel;        //stats panel             "5"  //Панель статистики
     private SettingsPanel settingspanel;  //settings panel          "6"  //Панель настроек
+    private RulesPanel rulespanel;        //rules panel             "7"  //Панель правил
 
     private static CardLayout cl;
 
@@ -60,12 +61,14 @@ public class Menu extends JFrame{
         offrespanel = new OffResPanel();
         statspanel = new StatsPanel();
         settingspanel = new SettingsPanel(csindex);
+        rulespanel = new RulesPanel();
         contentpanel.add(mmenupanel, "1");
         contentpanel.add(fieldpanel, "2");
         contentpanel.add(namepanel, "3");
         contentpanel.add(offrespanel, "4");
         contentpanel.add(statspanel, "5");
         contentpanel.add(settingspanel, "6");
+        contentpanel.add(rulespanel, "7");
     }
 
     private void Defaults(){
@@ -130,6 +133,7 @@ public class Menu extends JFrame{
         namepanel.updateColors();
         offrespanel.updateColors();
         statspanel.updateColors();
+        rulespanel.updateColors();
 
         backpanel.setBackground(cs.BACKPANEL_BG);
         widepanel.setBackground(cs.WIDEPANEL_BG);

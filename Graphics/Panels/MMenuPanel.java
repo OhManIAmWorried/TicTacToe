@@ -86,6 +86,13 @@ public class MMenuPanel extends JPanel{
                 Menu.getMenu().clShow("6");
             }
         });
+
+        rulesbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Menu.getMenu().clShow("7");
+            }
+        });
     }
 }
 
