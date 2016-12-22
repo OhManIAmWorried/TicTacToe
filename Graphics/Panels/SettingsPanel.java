@@ -9,9 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Graphics.CS.CS_Ginger;
-import Graphics.CS.CS_Milk;
-import Graphics.CS.ColorScheme;
+import Graphics.CS.*;
 import Graphics.Menu;
 
 public class SettingsPanel extends JPanel {
@@ -128,8 +126,8 @@ public class SettingsPanel extends JPanel {
         //portlabel = new JLabel("port address:");
         returnbtn = new JButton("Return to Menu");
         confirmbtn = new JButton("Confirm");
-        csnames = new String[]{"CS_Milk","CS_Ginger"};
-        csschemes = new ColorScheme[]{new CS_Milk(), new CS_Ginger()};
+        csnames = new String[]{"CS_Milk","CS_Ginger","CS_Brown","CS_Coffee","CS_Sea"};
+        csschemes = new ColorScheme[]{new CS_Milk(), new CS_Ginger(), new CS_Brown(), new CS_Coffee(), new CS_Sea()};
         cslist = new JList(csnames);
         if (Menu.getMenu() != null) ofirst = Menu.getMenu().getOFirst();
         ofirstrbtn = new JRadioButton("O First",ofirst);
